@@ -1,0 +1,42 @@
+{
+  "OurCampus": {
+    "title": "OurCampus",
+    "logo": "1PgZscmRonattuL2Omj5ntoxYnE6VKI1R",
+    "screenshots": [
+      "1WDO6Q0zotDcQgw-KYrDk7J-VjDef2nPQ",
+      "1YeVF3dp1lcrRp5OYByKuAl2dBbAkuIdp",
+      "1sHUpQUe7sIPmTV3M6H_5-2aKx2lXssdB",
+      "1OnU6IuymKdWb0LiisM926ePaelMVqL1w",
+      "1sH0_Kgz2UQFdMrqi8wYbhnafywGYmaPI",
+      "1w9TTjml1Q-z3F0nZOZJcDzEXk-_fwBJv"
+    ],
+    "orientation": "portrait",
+    "description": "Here at OurCampus, we didn’t set out with the objective to create an app for the sake of making one. We saw issues and shortcomings of Wesleyan’s institution, concerns that we believed we could address. Our ultimate goal is to help students in aspects of their everyday life that are currently lacking. "
+  },
+  "Enigma": {
+    "title": "Enigma",
+    "logo": "1jERzxt1XYZWH7C30W9nnurH7-S3joa8t",
+    "screenshots": [
+      "1-QlsRZt5RGW9eoAAe9IR2Ve1V_GjDZ3C",
+      "1JpeME952iypE5rlxcgzS8y7_FmC0D_8H",
+      "18oKacByeEn3Qjl6TDjFUraJywoo6cbCu",
+      "10IF09K2wog1RbiKLxHWrf5mZglSedkgj"
+    ],
+    "orientation": "landscape",
+    "description": "Here at OurCampus, we didn’t set out with the objective to create an app for the sake of making one. We saw issues and shortcomings of Wesleyan’s institution, concerns that we believed we could address. Our ultimate goal is to help students in aspects of their everyday life that are currently lacking. "
+  },
+  "Skphotography": {
+    "title": "Skphotography",
+    "logo": "1MzAM0Twr5lJZgqA27vMrj-kQZyCiVlpt",
+    "screenshots": [],
+    "orientation": "landscape",
+    "description": ""
+  },
+  "Privacy Pioneer": {
+    "title": "Privacy Pioneer",
+    "logo": "1P9lW59owlbZNqdwSRNr2UeQM-X7mhxeW",
+    "screenshots": [],
+    "orientation": "landscape",
+    "description": "Here at OurCampus, we didn’t set out with the objective to create an app for the sake of making one. We saw issues and shortcomings of Wesleyan’s institution, concerns that we believed we could address. Our ultimate goal is to help students in aspects of their everyday life that are currently lacking. "
+  }
+}
