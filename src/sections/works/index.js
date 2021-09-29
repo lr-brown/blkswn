@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import Card from "./components/portfolio-cards"
 import * as Assets from "../../lib/images/assets.json"
-import { SBody, SHeader, SText } from "./style"
+import { SBody, SHeader } from "./style"
 
 const WorksView = () => {
   return (

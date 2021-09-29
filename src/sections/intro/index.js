@@ -1,13 +1,5 @@
 import React from "react"
-import {
-  SHello,
-  SPicture,
-  SHeader,
-  SText,
-  SBody,
-  STitle,
-  SContent,
-} from "./style"
+import { SHello, SPicture, SText, SBody, STitle, SContent } from "./style"
 import Logan from "../../lib/images/logan.jpeg"
 const IntroView = () => {
   return (

@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { useHistory } from "react-router-dom"
-import { Sun, Moon } from "styled-icons/boxicons-solid"
-import { Divide } from "styled-icons/typicons"
 import * as SVG from "../../../logos/svg"
 import {
   SSideBar,
@@ -9,14 +7,10 @@ import {
   SLogo,
   STitle,
   SSvg,
-  SToggle,
-  SKnob,
   STab,
-  SThemeToggle,
   STabIcon,
   STabText,
   STabBody,
-  STopBar,
 } from "./style"
 
 const Tab = ({ page, icon, label }) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { useHistory } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
 import { Hamburger, Cross } from "../../../logos/svg"
@@ -20,14 +20,14 @@ const MobileAppBar = ({ logo, menu, setMenu }) => {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "100%" },
   }
-  const [theme, setTheme] = useState(true)
 
   const Tab = ({ page, icon, label }) => {
     const history = useHistory()
     return (
       <SMenuOption
         onClick={() => {
-          history.push(page), setMenu("none")
+          history.push(page)
+          setMenu("none")
         }}
       >
         {SVG.getTabIcon(icon)}
@@ -62,7 +62,7 @@ const MobileAppBar = ({ logo, menu, setMenu }) => {
       <AnimatePresence>
         <SMenu
           display={menu}
-          animate={menu == "none" ? "closed" : "open"}
+          animate={menu === "none" ? "closed" : "open"}
           variants={variants}
           transition={{ duration: 0.5 }}
         >
