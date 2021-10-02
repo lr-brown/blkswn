@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import DestopSideBar from "./desktop"
 import MobileAppBar from "./mobile"
 import { isMobile } from "react-device-detect"
 
 const AppBar = ({ logo, menu, setMenu }) => {
-  const [mobile, setMobile] = useState(isMobile)
-  return mobile ? (
+  return isMobile ? (
     <MobileAppBar logo={logo} menu={menu} setMenu={setMenu} />
   ) : (
     <DestopSideBar logo={logo} />
