@@ -30,7 +30,7 @@ const CardModal = ({ layout, exit, content }) => {
               <Cross size={36} onClick={exit} />
             </SCancel>
           </STop>
-          <SBody>
+          <SBody orientation={content.orientation}>
             <SSlideShow orientation={content.orientation}>
               <Carousel infiniteLoop showStatus={false}>
                 {content["screenshots"].map((screenshot, index) => (

@@ -3,27 +3,25 @@ import { motion } from "framer-motion"
 
 export const SSideBar = styled.div`
   display: flex;
-  background-image: var(--sidetab);
+  /* background-color: var(--sidetab); */
   top: 6px;
-  margin-top: 6px;
-  margin-left: 6px;
+  margin-left: 8px;
   position: sticky;
   border-radius: 20px;
-  width: Calc(5vw + 75px);
+  width: Calc(6vw + 75px);
   min-height: Calc(100vh - 12px);
   font-size: var(--title2);
   flex-direction: column;
-  height: Calc(100vh - 12px);
+  height: Calc(100vh - 16px);
 `
 
 export const SHeading = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 12px;
-  margin-bottom: 24px;
+  justify-content: space-evenly;
+  flex: 1;
 `
-
 export const STitle = styled.text`
   hyphens: auto;
   margin-top: 6px;
@@ -33,6 +31,7 @@ export const STitle = styled.text`
 
 export const SSvg = styled.div`
   display: flex;
+  flex: 3;
   width: 95%;
   align-self: center;
   align-items: center;
@@ -45,8 +44,8 @@ export const STab = styled(motion.div)`
   align-items: center;
   fill: var(--buttons);
   width: 85%;
+  margin-bottom: 16px;
   cursor: pointer;
-  margin: 8px 0px;
   :hover {
     fill: var(--buttonsAlt);
   }
@@ -72,33 +71,7 @@ export const STabText = styled.text`
 `
 
 export const SLogo = styled.img`
-  height: 100%;
-  width: 35%;
-  flex: 1;
+  max-width: 50%;
   display: flex;
   object-fit: contain;
 `
-
-// export const SThemeToggle = styled.div`
-//   display: flex;
-//   align-items: center;
-//   flex-direction: row;
-// `
-
-// export const SToggle = styled.div`
-//   display: flex;
-//   aspect-ratio: 2/1;
-//   width: 100%;
-//   margin: 4px;
-//   align-self: center;
-//   border-radius: 12px;
-//   background-color: black;
-//   cursor: pointer;
-// `
-
-// export const SKnob = styled(motion.div)`
-//   height: 100%;
-//   width: 50%;
-//   border-radius: 12px;
-//   background-color: white;
-// `

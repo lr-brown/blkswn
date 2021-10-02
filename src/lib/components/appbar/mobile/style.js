@@ -21,6 +21,9 @@ export const SMore = styled.div`
     cursor: pointer;
     margin-right: 8px;
   }
+  path {
+    fill: white;
+  }
 `
 export const SHeading = styled.div`
   display: flex;
@@ -58,7 +61,6 @@ export const SMenu = styled(motion.div)`
   left: 0;
   height: 90vh;
   width: 100vw;
-  background-image: var(--sidetab);
 `
 export const SMenuOption = styled.div`
   font-size: 5vw;

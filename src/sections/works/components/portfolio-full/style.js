@@ -13,6 +13,7 @@ export const SCard = styled(motion.div)`
   height: 90vh;
   width: 90vw;
   border-radius: 16px;
+  padding: 16px;
   background-color: var(--buttons);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   align-items: center;
@@ -26,7 +27,8 @@ export const STop = styled(motion.div)`
   display: flex;
 `
 export const SBody = styled(motion.div)`
-  flex-direction: row;
+  flex-direction: ${(props) =>
+    props.orientation === "landscape" ? "column" : "row"};
   margin-top: 16px;
   align-items: center;
   justify-content: space-evenly;

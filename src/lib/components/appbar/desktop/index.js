@@ -12,11 +12,16 @@ import {
   STabText,
   STabBody,
 } from "./style"
+import Resume from "../../../Logan_Brown_Resume.pdf"
 
-const Tab = ({ page, icon, label }) => {
-  const history = useHistory()
+const Tab = ({ onCLick, icon, label }) => {
   return (
-    <STab whileHover={{ scale: 1.1 }} onClick={() => history.push(page)}>
+    <STab
+      whileHover={{
+        scale: 1.2,
+      }}
+      onClick={onCLick}
+    >
       <SVG.Tab />
       <STabBody>
         <STabIcon>{SVG.getTabIcon(icon)}</STabIcon>
@@ -27,6 +32,8 @@ const Tab = ({ page, icon, label }) => {
 }
 
 const DestopSideBar = ({ logo }) => {
+  const history = useHistory()
+
   return (
     <SSideBar>
       <SHeading>
@@ -34,10 +41,22 @@ const DestopSideBar = ({ logo }) => {
         <STitle> {`Logan Brown \nDeveloper`} </STitle>
       </SHeading>
       <SSvg>
-        <Tab page="/" icon="aboutMe" label="About Me" />
-        <Tab page="/works" icon="portfolio" label="My Work" />
+        <Tab
+          onCLick={() => history.push("/")}
+          icon="aboutMe"
+          label="About Me"
+        />
+        <Tab
+          onCLick={() => history.push("/works")}
+          icon="portfolio"
+          label="My Work"
+        />
         <Tab icon="contact" label="Contact Me" />
-        <Tab icon="resume" label="My Resume" />
+        <Tab
+          onCLick={() => window.open(Resume)}
+          icon="resume"
+          label="My Resume"
+        />
       </SSvg>
     </SSideBar>
   )

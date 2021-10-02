@@ -5,7 +5,7 @@ import { StyledIconBase } from "@styled-icons/styled-icon"
 const Dark = css`
   :root {
     --accent: #f7bfb4;
-    --sidetab: linear-gradient(#4a6b97, #557cae);
+    --sidetab: #2d394e;
     --backgroundColor: #171d26;
     --primaryTextColor: #ffffff;
     --icons: #ffffff;
@@ -17,7 +17,7 @@ const Dark = css`
 const Light = css`
   :root {
     --accent: #3e0b47;
-    --sidetab: linear-gradient(#98c1d9, #afddf8);
+    --sidetab: #e0e0e0;
     --backgroundColor: #ffffff;
     --primaryTextColor: #000000;
     --icons: #000000;
