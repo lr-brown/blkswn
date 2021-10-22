@@ -7,8 +7,8 @@ export const SCard = styled(motion.div)`
   align-items: center;
   justify-content: space-evenly;
   aspect-ratio: 1/1.25;
-  margin: 16px 8px;
-  height: 40vh;
+  margin: 12px 8px;
+  height: 350px;
   border-radius: 16px;
   background-color: var(--buttons);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
@@ -23,19 +23,16 @@ export const SIcon = styled(motion.img)`
 
 export const SHeader = styled(motion.div)`
   display: flex;
-  font-size: 2vw;
+  font-size: var(--title1);
   text-align: center;
 `
 
-export const SButton = styled(motion.div)`
+export const SButton = styled(motion.button)`
   background-color: var(--accent);
-  user-select: none;
-  display: flex;
+  color: var(--primaryTextColor);
   cursor: pointer;
-  color: white;
-  border-radius: 12px;
-  align-items: center;
-  justify-content: center;
   padding: 12px 12px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: none;
 `

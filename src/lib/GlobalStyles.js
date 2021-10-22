@@ -4,7 +4,7 @@ import { StyledIconBase } from "@styled-icons/styled-icon"
 
 const Dark = css`
   :root {
-    --accent: #f7bfb4;
+    --accent: #464962;
     --sidetab: #2d394e;
     --backgroundColor: #171d26;
     --primaryTextColor: #ffffff;
@@ -42,22 +42,29 @@ body {
     padding: 0px;
     margin: 0px;
     font-family:League Spartan;
-    background-color: var(--backgroundColor);
+    background: var(--backgroundColor);
     line-height: normal;
     color:var(--primaryTextColor);
   }
+button{
+  background: none;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  font-family:League Spartan;
+}
 
 #root {
     // Font sizes
-    --title1: 20px;
-    --title2: 18px;
-    --headline: 16px;
+    --title1: 32px;
+    --title2: 24px;
+    --headline: 20px;
     --body1: 16px;
     --body2: 14px;
     margin: 0px 0px;
     font-size: var(--body1);
     display: flex;
-    align-items: stretch;
+    align-items: center;
     flex-direction: column;
 }
 

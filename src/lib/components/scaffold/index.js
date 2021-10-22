@@ -1,18 +1,23 @@
 import styled from "styled-components"
 import React from "react"
-import { isMobile } from "react-device-detect"
 
 const SScaffold = styled.main`
-  width: 100%;
+  max-height: 100vh;
   display: flex;
-  flex-direction: ${isMobile ? "column" : "row"};
+  overflow-y: hidden;
+  flex-direction: row;
+  @media (min-width: 1700px) {
+    width: 1700px;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+  }
 `
 const SBody = styled.div`
   display: flex;
-  height: ${isMobile ? "90vh" : "100vh"};
+  height: 100vh;
   width: 100%;
-  overflow-y: ${(props) => (props.menu === "flex" ? "hidden" : "auto")};
-  align-items: center;
+  overflow-y: auto;
 `
 
 const Scaffold = ({ sidebar, body, menu }) => {

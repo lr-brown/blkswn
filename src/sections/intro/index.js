@@ -26,9 +26,6 @@ const IntroView = () => {
       </div>
 
       <SContent>
-        <SPictureDiv>
-          <SPicture src={Logan} alt={"A photo of Logan"} />
-        </SPictureDiv>
         <SAboutMe>
           <STitle>Introduction</STitle>
           <SText>
@@ -47,6 +44,9 @@ const IntroView = () => {
             you.
           </SText>
         </SAboutMe>
+        <SPictureDiv>
+          <SPicture src={Logan} alt={"A photo of Logan"} />
+        </SPictureDiv>
       </SContent>
     </SBody>
   )

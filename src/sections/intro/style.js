@@ -5,9 +5,7 @@ export const SBody = styled(motion.div)`
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-self: stretch;
   align-items: center;
-  width: 100%;
 `
 
 export const SHello = styled.div`

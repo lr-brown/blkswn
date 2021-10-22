@@ -25,17 +25,17 @@ export const STop = styled(motion.div)`
   justify-content: space-between;
   align-self: flex-start;
   display: flex;
+  height: 10%;
 `
 export const SBody = styled(motion.div)`
-  flex-direction: ${(props) =>
-    props.orientation === "landscape" ? "column" : "row"};
+  flex-direction: row;
   margin-top: 16px;
-  align-items: center;
-  justify-content: space-evenly;
+  padding: 8px 8px;
   display: flex;
   flex-wrap: wrap;
-  flex: 1;
-  overflow-y: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  max-height: 100%;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -45,34 +45,62 @@ export const SIcon = styled(motion.img)`
   border-radius: 12px;
   margin: 12px 12px;
   display: flex;
-  height: 4.5vw;
+  height: 100%;
   object-fit: contain;
 `
 
 export const SScreenShot = styled.img`
-  display: flex;
-  object-fit: contain;
-  height: auto;
-  width: auto;
   border-radius: 6px;
+  max-width: 100%;
 `
 
 export const SSlideShow = styled.div`
   display: flex;
-  width: ${(props) => (props.orientation === "landscape" ? "400px" : "275px")};
-  margin-left: 12px;
+  width: ${(props) => (props.orientation === "landscape" ? "45%" : "25%")};
+  align-items: center;
+  height: 100%;
 `
 
 export const SHeader = styled(motion.div)`
   font-size: 48px;
   display: flex;
 `
+export const SDescriptionBG = styled(motion.div)`
+  justify-content: center;
+  flex: 2;
+  display: flex;
+`
 export const SDescription = styled(motion.div)`
   font-size: 18px;
   display: flex;
-  width: 50%;
+  height: 100%;
   flex-direction: column;
-  justify-content: space-evenly;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 16px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+  }
+`
+export const SQuestion = styled(motion.span)`
+  font-size: var(--title2);
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 8px;
+`
+export const SAnswer = styled(motion.span)`
+  font-size: var(--body1);
+  border-radius: 8px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 16px;
 `
 
 export const SOverlay = styled(motion.div)`
@@ -84,8 +112,13 @@ export const SOverlay = styled(motion.div)`
   background-color: rgba(0, 0, 0, 0.5);
 `
 
-export const SCancel = styled(motion.div)`
+export const SCancel = styled(motion.button)`
   margin: 8px 8px;
-  cursor: pointer;
   align-self: flex-start;
+`
+
+export const SBottom = styled(motion.div)`
+  display: flex;
+  height: 10%;
+  width: 100%;
 `

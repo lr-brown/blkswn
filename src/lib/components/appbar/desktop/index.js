@@ -1,6 +1,6 @@
 import React from "react"
-import { useHistory } from "react-router-dom"
-import * as SVG from "../../../logos/svg"
+import { useHistory, useLocation } from "react-router-dom"
+import * as SVG from "../../../svg"
 import {
   SSideBar,
   SHeading,
@@ -14,15 +14,21 @@ import {
 } from "./style"
 import Resume from "../../../Logan_Brown_Resume.pdf"
 
-const Tab = ({ onCLick, icon, label }) => {
+const Tab = ({ onCLick, icon, label, index }) => {
   return (
     <STab
-      whileHover={{
-        scale: 1.2,
-      }}
+      id={label}
       onClick={onCLick}
+      whileHover={{
+        scale: 1.05,
+        transition: { duration: 0.05 },
+      }}
+      whileFocus={{
+        scale: 1.05,
+        transition: { duration: 0.05 },
+      }}
     >
-      <SVG.Tab />
+      <SVG.Squircle size={"100%"} />
       <STabBody>
         <STabIcon>{SVG.getTabIcon(icon)}</STabIcon>
         <STabText>{label}</STabText>
@@ -33,7 +39,7 @@ const Tab = ({ onCLick, icon, label }) => {
 
 const DestopSideBar = ({ logo }) => {
   const history = useHistory()
-
+  const location = useLocation()
   return (
     <SSideBar>
       <SHeading>
@@ -42,20 +48,32 @@ const DestopSideBar = ({ logo }) => {
       </SHeading>
       <SSvg>
         <Tab
-          onCLick={() => history.push("/")}
+          onCLick={() => history.push("/", { prevPath: location.pathname })}
           icon="aboutMe"
           label="About Me"
+          index={1}
         />
         <Tab
-          onCLick={() => history.push("/works")}
+          onCLick={() =>
+            history.push("/works", { prevPath: location.pathname })
+          }
           icon="portfolio"
           label="My Work"
+          index={2}
         />
-        <Tab icon="contact" label="Contact Me" />
+        <Tab
+          onCLick={() =>
+            history.push("/works", { prevPath: location.pathname })
+          }
+          icon="contact"
+          label="Contact Me"
+          index={3}
+        />
         <Tab
           onCLick={() => window.open(Resume)}
           icon="resume"
           label="My Resume"
+          index={4}
         />
       </SSvg>
     </SSideBar>
