@@ -1,6 +1,4 @@
 import { createGlobalStyle, css } from "styled-components"
-import LeagueSpartan from "./font/LeagueSpartan-Bold.otf"
-import { StyledIconBase } from "@styled-icons/styled-icon"
 
 const Dark = css`
   :root {
@@ -28,11 +26,6 @@ const Light = css`
 
 const GlobalStyle = createGlobalStyle`
 
-@font-face {
-    font-family: League Spartan;
-    src: url(${LeagueSpartan});
-  }
-
 ${Light}
 @media (prefers-color-scheme: dark) {
    ${Dark}
@@ -41,7 +34,7 @@ ${Light}
 body {
     padding: 0px;
     margin: 0px;
-    font-family:League Spartan;
+    font-family:'Roboto', sans-serif;
     background: var(--backgroundColor);
     line-height: normal;
     color:var(--primaryTextColor);
@@ -51,7 +44,8 @@ button{
   cursor: pointer;
   border-radius: 8px;
   border: none;
-  font-family:League Spartan;
+  font-weight: bold;
+  font-family:'Roboto', sans-serif;
 }
 
 #root {
@@ -67,10 +61,39 @@ button{
     align-items: center;
     flex-direction: column;
 }
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 0px;
+    line-height: 1;
+    opacity: 1;
 
-${StyledIconBase} {
-    color: var(--icons);
-  }
+}
+
+.slick-prev,
+.slick-next
+{
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
+
+.slick-next
+{
+    right: -55px;
+}
+.slick-prev
+{
+    left: -55px;
+}
 
 `
 export default GlobalStyle

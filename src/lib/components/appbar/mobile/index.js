@@ -1,8 +1,7 @@
-import React from "react"
+import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
-import { Hamburger, Cross } from "../../../logos/svg"
-import * as SVG from "../../../logos/svg"
+import * as SVG from "../../../svg"
 import {
   SHeading,
   SLogo,
@@ -11,28 +10,35 @@ import {
   SMore,
   SImage,
   SMenu,
-  SMenuOption,
-  SDivider,
+  STab,
+  STabBody,
+  STabIcon,
+  STabText,
 } from "./style"
 
-const MobileAppBar = ({ logo, menu, setMenu }) => {
+const MobileAppBar = ({ logo }) => {
   const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "100%" },
+    open: { opacity: 1 },
+    closed: { opacity: 0 },
   }
+
+  const [menu, setMenu] = useState("none")
 
   const Tab = ({ page, icon, label }) => {
     const history = useHistory()
     return (
-      <SMenuOption
+      <STab
         onClick={() => {
           history.push(page)
           setMenu("none")
         }}
       >
-        {SVG.getTabIcon(icon)}
-        <div style={{ margin: "0px 12px" }}>{label}</div>
-      </SMenuOption>
+        <SVG.Squircle size={"100%"} />
+        <STabBody>
+          <STabIcon>{SVG.getTabIcon(icon)}</STabIcon>
+          <STabText>{label}</STabText>
+        </STabBody>
+      </STab>
     )
   }
   return (
@@ -52,9 +58,9 @@ const MobileAppBar = ({ logo, menu, setMenu }) => {
             }}
           >
             {menu === "flex" ? (
-              <Cross size="36px" />
+              <SVG.Cross size="36px" />
             ) : (
-              <Hamburger size="36px" />
+              <SVG.Hamburger size="36px" />
             )}
           </div>
         </SMore>
@@ -66,13 +72,8 @@ const MobileAppBar = ({ logo, menu, setMenu }) => {
           variants={variants}
           transition={{ duration: 0.5 }}
         >
-          <div>
-            <Tab page="/" icon="aboutMe" label="About Me" />
-            <SDivider />
-            <Tab page="/works" icon="portfolio" label="My Work" />
-            <SDivider />
-            <Tab icon="contact" label="Contact Me" />
-          </div>
+          <Tab page="/" icon="aboutMe" label="About Me" />
+          <Tab page="/works" icon="portfolio" label="My Work" />
         </SMenu>
       </AnimatePresence>
     </div>

@@ -25,6 +25,7 @@ export const SHeader = styled(motion.div)`
   display: flex;
   font-size: var(--title1);
   text-align: center;
+  font-weight: bold;
 `
 
 export const SButton = styled(motion.button)`

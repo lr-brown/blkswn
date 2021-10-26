@@ -12,9 +12,8 @@ import {
   STabText,
   STabBody,
 } from "./style"
-import Resume from "../../../Logan_Brown_Resume.pdf"
 
-const Tab = ({ onCLick, icon, label, index }) => {
+const Tab = ({ onCLick, icon, label }) => {
   return (
     <STab
       id={label}
@@ -44,7 +43,11 @@ const DestopSideBar = ({ logo }) => {
     <SSideBar>
       <SHeading>
         <SLogo src={logo} alt="Logo" />
-        <STitle> {`Logan Brown \nDeveloper`} </STitle>
+        <STitle>
+          {" "}
+          Logan Brown
+          <br /> Developer{" "}
+        </STitle>
       </SHeading>
       <SSvg>
         <Tab
@@ -63,17 +66,14 @@ const DestopSideBar = ({ logo }) => {
         />
         <Tab
           onCLick={() =>
-            history.push("/works", { prevPath: location.pathname })
+            window.open(
+              "https://docs.google.com/document/d/1xKqSKlgiYtP053rVNgCdgxbEzGZYJPxt5aoCfMOM0Lc/export?format=pdf",
+              "_blank"
+            )
           }
-          icon="contact"
-          label="Contact Me"
-          index={3}
-        />
-        <Tab
-          onCLick={() => window.open(Resume)}
           icon="resume"
           label="My Resume"
-          index={4}
+          index={3}
         />
       </SSvg>
     </SSideBar>

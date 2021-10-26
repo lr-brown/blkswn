@@ -18,6 +18,7 @@ export const SHello = styled.div`
   align-items: center;
   display: flex;
   font-size: Calc(1vw + 18px);
+  font-weight: bold;
   text-align: center;
 `
 export const SPictureDiv = styled.div`
@@ -39,6 +40,7 @@ export const STitle = styled.text`
   font-size: Calc(24px + 2vw);
   text-align: center;
   align-self: center;
+  font-weight: 600;
 `
 
 export const SContent = styled.div`
@@ -58,8 +60,9 @@ export const SText = styled.text`
   display: flex;
   text-align: center;
   flex-direction: column;
-  font-size: Calc(16px + 1vh);
+  font-size: Calc(var(--body1) + 1vh);
   word-wrap: normal;
+  font-weight: 500;
 `
 export const SAboutMe = styled.div`
   display: flex;

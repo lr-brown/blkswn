@@ -7,9 +7,8 @@ export const SSideBar = styled.div`
   margin-left: 8px;
   position: sticky;
   border-radius: 20px;
-  min-width: 150px;
-  max-width: 175px;
-  max-height: 100vh;
+  width: 225px;
+  height: 100vh;
   font-size: var(--title2);
   flex-direction: column;
   overflow-y: auto;
@@ -30,8 +29,9 @@ export const SHeading = styled.div`
 export const STitle = styled.text`
   hyphens: auto;
   margin-top: 6px;
-  font-size: Calc(0.5vw + 10px);
+  font-size: 18px;
   text-align: center;
+  font-weight: 600;
 `
 
 export const SSvg = styled.div`
@@ -48,7 +48,7 @@ export const STab = styled(motion.button)`
   justify-content: center;
   align-items: center;
   fill: var(--buttons);
-  width: 95%;
+  width: 85%;
   cursor: pointer;
   margin: 4px;
   color: var(--primaryTextColor);
@@ -72,6 +72,6 @@ export const STabText = styled.text`
   text-align: center;
   justify-content: center;
   display: flex;
-  font-size: 14px;
+  font-size: 16px;
   margin: 0px 4px;
 `

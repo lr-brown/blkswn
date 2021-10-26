@@ -7,10 +7,13 @@ import IntroView from "./sections/intro"
 import { Switch, Route, useLocation } from "react-router-dom"
 import WorksView from "./sections/works"
 import { AnimatePresence } from "framer-motion"
-import AppBar from "./lib/components/appbar"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import { isBrowser } from "react-device-detect"
+import DestopSideBar from "./lib/components/appbar/desktop"
+import MobileAppBar from "./lib/components/appbar/mobile"
 
 function App() {
-  const [mobileMenu, setMenu] = useState("none")
   const [logo, setLogo] = useState(undefined)
   const location = useLocation()
 
@@ -29,8 +32,13 @@ function App() {
     <div>
       <GlobalStyle />
       <Scaffold
-        menu={mobileMenu}
-        sidebar={<AppBar menu={mobileMenu} setMenu={setMenu} logo={logo} />}
+        sidebar={
+          isBrowser ? (
+            <DestopSideBar logo={logo} />
+          ) : (
+            <MobileAppBar logo={logo} />
+          )
+        }
         body={
           <AnimatePresence exitBeforeEnter initial={false}>
             <Switch location={location} key={location.pathname}>

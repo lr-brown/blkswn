@@ -1,7 +1,7 @@
 import React from "react"
 import { SButton, SCard, SHeader, SIcon } from "./style"
 
-const imageUrl = "https://drive.google.com/uc?export=view&id="
+const imageUrl = ""
 
 const Card = ({ content, tab, onClick }) => {
   const layoutId = { pic: "pic", body: "body", title: "title" }

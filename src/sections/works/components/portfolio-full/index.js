@@ -14,26 +14,40 @@ import {
   SDescriptionBG,
   SQuestion,
   SAnswer,
+  SImg,
 } from "./style"
 import * as SVG from "../../../../lib/svg"
 import { AnimatePresence } from "framer-motion"
-import { Cross } from "@styled-icons/icomoon"
-import ReactSwipe from "react-swipe"
-import "react-responsive-carousel/lib/styles/carousel.min.css"
+import Slider from "react-slick"
 import { useEffect } from "react"
+import { isBrowser } from "react-device-detect"
 
-const imageUrl = "https://drive.google.com/uc?export=view&id="
+const imageUrl = ""
 
 const CardModal = ({ layout, exit, content }) => {
-  let reactSwipeEl
+  const Arrow = ({ onClick, className, prev }) => {
+    return (
+      <button
+        style={{ fontSize: "0px" }}
+        type="button"
+        onClick={onClick}
+        className={`button button--text button--icon ${className}`}
+      >
+        <SVG.Arrow previous={prev} />
+      </button>
+    )
+  }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <Arrow />,
+    prevArrow: <Arrow prev />,
+  }
   const handleKeyDown = (event) => {
-    if (event.keyCode === 39) {
-      reactSwipeEl.next()
-    }
-    if (event.keyCode === 37) {
-      reactSwipeEl.prev()
-    }
     if (event.keyCode === 27) {
       exit()
     }
@@ -54,45 +68,37 @@ const CardModal = ({ layout, exit, content }) => {
             <SIcon src={imageUrl + content.logo} layoutId={layout.pic} />
             <SHeader layoutId={layout.title}>{content.title}</SHeader>
             <SCancel whileHover={{ scale: 1.1 }} onClick={exit}>
-              <Cross size={36} />
+              <SVG.Cross size="36px" />
             </SCancel>
           </STop>
-          <SBody orientation={content.orientation}>
-            <SSlideShow orientation={content.orientation}>
-              <button onClick={() => reactSwipeEl.prev()}>
-                <SVG.Arrow size={24} previous />
-              </button>
-
-              <ReactSwipe
-                className="carousel"
-                swipeOptions={{ continuous: true }}
-                ref={(el) => (reactSwipeEl = el)}
-              >
-                {content["screenshots"].map((screenshot, index) => (
-                  <SScreenShot
-                    src={imageUrl + screenshot}
-                    key={index}
-                    alt="HI"
-                  />
-                ))}
-              </ReactSwipe>
-              <button onClick={() => reactSwipeEl.next()}>
-                <SVG.Arrow size={24} />
-              </button>
+          <SBody>
+            <SSlideShow>
+              <SImg orientation={content.orientation}>
+                <Slider {...settings}>
+                  {content["screenshots"].map((screenshot, index) => (
+                    <SScreenShot
+                      src={imageUrl + screenshot}
+                      key={index}
+                      alt="HI"
+                    />
+                  ))}
+                </Slider>
+              </SImg>
             </SSlideShow>
-
-            <SDescriptionBG>
-              <SDescription>
-                <SQuestion>What?</SQuestion>
-                <SAnswer>{content.description.what}</SAnswer>
-                <SQuestion>Who, Where and When?</SQuestion>
-                <SAnswer>{content.description.when}</SAnswer>
-                <SQuestion>How?</SQuestion>
-                <SAnswer>{content.description.how}</SAnswer>
-                <SQuestion>Why?</SQuestion>
-                <SAnswer>{content.description.why}</SAnswer>
-              </SDescription>
-            </SDescriptionBG>
+            {isBrowser ? (
+              <SDescriptionBG>
+                <SDescription>
+                  <SQuestion>What?</SQuestion>
+                  <SAnswer>{content.description.what}</SAnswer>
+                  <SQuestion>Who, Where and When?</SQuestion>
+                  <SAnswer>{content.description.when}</SAnswer>
+                  <SQuestion>How?</SQuestion>
+                  <SAnswer>{content.description.how}</SAnswer>
+                  <SQuestion>Why?</SQuestion>
+                  <SAnswer>{content.description.why}</SAnswer>
+                </SDescription>
+              </SDescriptionBG>
+            ) : null}
           </SBody>
           <SBottom></SBottom>
         </SCard>

@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import React from "react"
+import { isBrowser } from "react-device-detect"
 
 const SScaffold = styled.main`
-  max-height: 100vh;
   display: flex;
   overflow-y: hidden;
-  flex-direction: row;
+  flex-direction: ${isBrowser ? "row" : "column"};
   @media (min-width: 1700px) {
     width: 1700px;
     align-items: center;
@@ -15,7 +15,7 @@ const SScaffold = styled.main`
 `
 const SBody = styled.div`
   display: flex;
-  height: 100vh;
+  height: ${isBrowser ? "100vh" : "90vh"};
   width: 100%;
   overflow-y: auto;
 `

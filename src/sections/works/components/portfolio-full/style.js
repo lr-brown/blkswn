@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import { isBrowser } from "react-device-detect"
 
 export const SCard = styled(motion.div)`
   position: fixed;
@@ -33,12 +34,8 @@ export const SBody = styled(motion.div)`
   padding: 8px 8px;
   display: flex;
   flex-wrap: wrap;
-  overflow-y: hidden;
   max-width: 100%;
-  max-height: 100%;
-  ::-webkit-scrollbar {
-    display: none;
-  }
+  max-height: 90%;
 `
 
 export const SIcon = styled(motion.img)`
@@ -51,23 +48,30 @@ export const SIcon = styled(motion.img)`
 
 export const SScreenShot = styled.img`
   border-radius: 6px;
-  max-width: 100%;
+  width: 100%;
+`
+
+export const SImg = styled.div`
+  width: ${(props) => (props.orientation === "portrait" ? "40%" : "80%")};
 `
 
 export const SSlideShow = styled.div`
-  display: flex;
-  width: ${(props) => (props.orientation === "landscape" ? "45%" : "25%")};
   align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
   height: 100%;
+  width: ${isBrowser ? "50%" : "100%"};
 `
 
 export const SHeader = styled(motion.div)`
   font-size: 48px;
   display: flex;
+  font-weight: bolder;
 `
 export const SDescriptionBG = styled(motion.div)`
   justify-content: center;
-  flex: 2;
+  flex: 1;
   display: flex;
 `
 export const SDescription = styled(motion.div)`
@@ -93,6 +97,7 @@ export const SQuestion = styled(motion.span)`
   width: fit-content;
   align-items: center;
   margin-bottom: 8px;
+  font-weight: bold;
 `
 export const SAnswer = styled(motion.span)`
   font-size: var(--body1);

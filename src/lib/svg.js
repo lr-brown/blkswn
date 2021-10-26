@@ -140,12 +140,13 @@ export const Arrow = ({ size, previous }) => (
     xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
-    transform={previous ? "scale(-1 1)" : "0"}
+    transform={previous ? "scale(-1 1)" : "scale(1 1)"}
     viewBox="0 0 24 24"
   >
-    <path d="M10.477 0h-8.977l12.024 12-12.024 12h8.977l12.023-12z" />
+    <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />{" "}
   </svg>
 )
+
 export const getTabIcon = (icon) => {
   const size = "40px"
   switch (icon) {

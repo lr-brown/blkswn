@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export const STopBar = styled.div`
   display: flex;
-  background-image: var(--sidetab);
+  background: var(--backgroundColor);
   top: 0px;
   position: sticky;
   width: 100vw;
@@ -54,25 +54,44 @@ export const SImage = styled.div`
 export const SMenu = styled(motion.div)`
   display: ${(props) => props.display};
   position: fixed;
+  background: var(--backgroundColor);
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   top: 10vh;
   left: 0;
-  height: 90vh;
-  width: 100vw;
+  width: 100%;
+  height: 100vh;
+  padding: 16px;
 `
-export const SMenuOption = styled.div`
-  font-size: 5vw;
+export const STab = styled(motion.button)`
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  fill: var(--buttons);
+  width: 45%;
+  cursor: pointer;
+  margin: 4px;
+  color: var(--primaryTextColor);
+  :hover {
+    fill: var(--buttonsAlt);
+  }
 `
-export const SDivider = styled.div`
-  margin: 8px 4px;
+
+export const STabBody = styled.div`
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+`
+export const STabIcon = styled.div`
+  fill: var(--icons);
+  margin-bottom: 6px;
   display: flex;
-  height: 2px;
-  background-color: black;
+  justify-content: center;
+`
+export const STabText = styled.text`
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  font-size: 16px;
+  margin: 0px 4px;
 `
