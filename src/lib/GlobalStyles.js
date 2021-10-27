@@ -1,6 +1,16 @@
 import { createGlobalStyle, css } from "styled-components"
 
-const Dark = css``
+const Dark = css`
+  :root {
+    --accent: #464962;
+    --sidetab: #2d394e;
+    --backgroundColor: #171d26;
+    --primaryTextColor: #ffffff;
+    --icons: #ffffff;
+    --buttons: #b797cc;
+    --buttonsAlt: #3e0a48;
+  }
+`
 
 // const Light = css`
 //   :root {
@@ -16,8 +26,7 @@ const Dark = css``
 
 const GlobalStyle = createGlobalStyle`
 
-  ${Dark}
-
+   ${Dark}
 
 body {
     padding: 0px;
