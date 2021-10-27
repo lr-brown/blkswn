@@ -1,35 +1,23 @@
 import { createGlobalStyle, css } from "styled-components"
 
-const Dark = css`
-  :root {
-    --accent: #464962;
-    --sidetab: #2d394e;
-    --backgroundColor: #171d26;
-    --primaryTextColor: #ffffff;
-    --icons: #ffffff;
-    --buttons: #b797cc;
-    --buttonsAlt: #3e0a48;
-  }
-`
+const Dark = css``
 
-const Light = css`
-  :root {
-    --accent: #3e0b47;
-    --sidetab: #e0e0e0;
-    --backgroundColor: #ffffff;
-    --primaryTextColor: #000000;
-    --icons: #000000;
-    --buttons: #ffcdc3;
-    --buttonsAlt: #f7ddd3;
-  }
-`
+// const Light = css`
+//   :root {
+//     --accent: #3e0b47;
+//     --sidetab: #e0e0e0;
+//     --backgroundColor: #ffffff;
+//     --primaryTextColor: #000000;
+//     --icons: #000000;
+//     --buttons: #ffcdc3;
+//     --buttonsAlt: #f7ddd3;
+//   }
+// `
 
 const GlobalStyle = createGlobalStyle`
 
-${Light}
-@media (prefers-color-scheme: dark) {
-   ${Dark}
-}
+  ${Dark}
+
 
 body {
     padding: 0px;

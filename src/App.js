@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Scaffold from "./lib/components/scaffold"
 import GlobalStyle from "./lib/GlobalStyles"
-import LightLogo from "./lib/logos/light_logo.png"
 import DarkLogo from "./lib/logos/dark_logo.png"
 import IntroView from "./sections/intro"
 import { Switch, Route, useLocation } from "react-router-dom"
@@ -14,19 +13,7 @@ import DestopSideBar from "./lib/components/appbar/desktop"
 import MobileAppBar from "./lib/components/appbar/mobile"
 
 function App() {
-  const [logo, setLogo] = useState(undefined)
   const location = useLocation()
-
-  useEffect(() => {
-    if (
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
-      setLogo(DarkLogo)
-    } else {
-      setLogo(LightLogo)
-    }
-  }, [])
 
   return (
     <div style={{ display: "flex", flex: "1 1 auto", width: "100%" }}>
@@ -34,9 +21,9 @@ function App() {
       <Scaffold
         sidebar={
           isBrowser ? (
-            <DestopSideBar logo={logo} />
+            <DestopSideBar logo={DarkLogo} />
           ) : (
-            <MobileAppBar logo={logo} />
+            <MobileAppBar logo={DarkLogo} />
           )
         }
         body={

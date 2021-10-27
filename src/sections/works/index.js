@@ -63,7 +63,7 @@ const WorksView = () => {
           flex: "1 1 auto",
         }}
       >
-        {loading && Object.keys(Assets).length > 0 ? (
+        {loading && Object.keys(Assets).length === 0 ? (
           <DotLoader size={150} color="var(--buttons)" />
         ) : (
           Object.keys(Assets).map((project) => {
