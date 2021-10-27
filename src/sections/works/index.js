@@ -1,12 +1,12 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Card from "./components/portfolio-cards"
 import CardModal from "./components/portfolio-full"
 import { AnimateSharedLayout } from "framer-motion"
-import Assets from "../../lib/images/assets.json"
 import { SBody, SHeader } from "./style"
 import { isBrowser } from "react-device-detect"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
+import { DotLoader } from "react-spinners"
 
 const WorksView = () => {
   const [modal, setModal] = useState("")
@@ -14,6 +14,19 @@ const WorksView = () => {
   const [isOpen, setOpen] = useState(false)
   const [photoIndex, setIndex] = useState(0)
   const [images, setImages] = useState([])
+  const [Assets, setAssets] = useState({})
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let url = "https://api.npoint.io/63009998d7fd4b52770f"
+    fetch(url)
+      .then((response) => response.json())
+      .then((result) => {
+        setAssets(result)
+        setTimeout(() => setLoading(false), 2000)
+      })
+      .catch((error) => console.log("error", error))
+  }, [])
 
   const handleClick = (title) => {
     if (!modal && isBrowser) {
@@ -43,31 +56,37 @@ const WorksView = () => {
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
+          alignItems: "center",
           width: "95%",
           alignSelf: "center",
           flexWrap: "wrap",
+          flex: "1 1 auto",
         }}
       >
-        {Object.keys(Assets).map((project) => {
-          return (
-            <AnimateSharedLayout type="crossfade" key={project}>
-              <Card
-                onClick={() => handleClick(Assets[project].title)}
-                content={Assets[project]}
-                key={project + "1"}
-                tabIndex={tab}
-              />
-              {modal === Assets[project].title ? (
-                <CardModal
-                  layout={{ pic: "pic", body: "body", title: "title" }}
-                  exit={handleExit}
-                  key={project + "2"}
+        {loading && Object.keys(Assets).length > 0 ? (
+          <DotLoader size={150} color="var(--buttons)" />
+        ) : (
+          Object.keys(Assets).map((project) => {
+            return (
+              <AnimateSharedLayout type="crossfade" key={project}>
+                <Card
+                  onClick={() => handleClick(Assets[project].title)}
                   content={Assets[project]}
+                  key={project + "1"}
+                  tabIndex={tab}
                 />
-              ) : null}
-            </AnimateSharedLayout>
-          )
-        })}
+                {modal === Assets[project].title ? (
+                  <CardModal
+                    layout={{ pic: "pic", body: "body", title: "title" }}
+                    exit={handleExit}
+                    key={project + "2"}
+                    content={Assets[project]}
+                  />
+                ) : null}
+              </AnimateSharedLayout>
+            )
+          })
+        )}
         {isOpen && (
           <Lightbox
             mainSrc={images[photoIndex]}

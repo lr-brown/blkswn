@@ -29,7 +29,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div style={{ display: "flex", flex: "1 1 auto", width: "100%" }}>
       <GlobalStyle />
       <Scaffold
         sidebar={

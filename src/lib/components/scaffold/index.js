@@ -6,6 +6,7 @@ const SScaffold = styled.main`
   display: flex;
   overflow-y: hidden;
   flex-direction: ${isBrowser ? "row" : "column"};
+  width: 100%;
   @media (min-width: 1700px) {
     width: 1700px;
     align-items: center;
