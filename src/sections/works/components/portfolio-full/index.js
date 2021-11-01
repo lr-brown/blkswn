@@ -20,7 +20,7 @@ import * as SVG from "../../../../lib/svg"
 import { AnimatePresence } from "framer-motion"
 import Slider from "react-slick"
 import { useEffect } from "react"
-import { isBrowser } from "react-device-detect"
+import { isDesktop } from "react-device-detect"
 
 const imageUrl = ""
 
@@ -85,7 +85,7 @@ const CardModal = ({ layout, exit, content }) => {
                 </Slider>
               </SImg>
             </SSlideShow>
-            {isBrowser ? (
+            {isDesktop ? (
               <SDescriptionBG>
                 <SDescription>
                   <SQuestion>What?</SQuestion>

@@ -9,6 +9,7 @@ export const SSideBar = styled.div`
   border-radius: 20px;
   width: 225px;
   height: 100vh;
+  max-height: 852px;
   font-size: var(--title2);
   flex-direction: column;
   overflow-y: auto;

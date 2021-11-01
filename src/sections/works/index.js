@@ -3,7 +3,7 @@ import Card from "./components/portfolio-cards"
 import CardModal from "./components/portfolio-full"
 import { AnimateSharedLayout } from "framer-motion"
 import { SBody, SHeader } from "./style"
-import { isBrowser } from "react-device-detect"
+import { isDesktop } from "react-device-detect"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
 import { DotLoader } from "react-spinners"
@@ -29,7 +29,7 @@ const WorksView = () => {
   }, [])
 
   const handleClick = (title) => {
-    if (!modal && isBrowser) {
+    if (!modal && isDesktop) {
       setModal(title)
       setTab(-1)
     } else {
@@ -63,7 +63,7 @@ const WorksView = () => {
           flex: "1 1 auto",
         }}
       >
-        {loading && Object.keys(Assets).length === 0 ? (
+        {loading || Object.keys(Assets).length === 0 ? (
           <DotLoader size={150} color="var(--buttons)" />
         ) : (
           Object.keys(Assets).map((project) => {

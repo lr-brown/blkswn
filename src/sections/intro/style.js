@@ -28,7 +28,6 @@ export const SPictureDiv = styled.div`
 
 export const SPicture = styled.img`
   width: 100%;
-  flex: 1;
   justify-self: center;
   border-radius: 20px;
   display: flex;
@@ -60,9 +59,7 @@ export const SText = styled.text`
   display: flex;
   text-align: center;
   flex-direction: column;
-  font-size: Calc(var(--body1) + 1vh);
-  word-wrap: normal;
-  font-weight: 500;
+  font-size: var(--body1);
 `
 export const SAboutMe = styled.div`
   display: flex;
@@ -70,6 +67,4 @@ export const SAboutMe = styled.div`
   justify-content: space-evenly;
   flex-direction: column;
   flex: 1;
-  word-wrap: normal;
-  align-self: stretch;
 `

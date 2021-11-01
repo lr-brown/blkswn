@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { isBrowser } from "react-device-detect"
+import { isDesktop } from "react-device-detect"
 
 export const SCard = styled(motion.div)`
   position: fixed;
@@ -61,7 +61,7 @@ export const SSlideShow = styled.div`
   flex: 1;
   justify-content: center;
   height: 100%;
-  width: ${isBrowser ? "50%" : "100%"};
+  width: ${isDesktop ? "50%" : "100%"};
 `
 
 export const SHeader = styled(motion.div)`

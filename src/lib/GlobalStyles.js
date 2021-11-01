@@ -50,7 +50,7 @@ button{
     --title1: 32px;
     --title2: 24px;
     --headline: 20px;
-    --body1: 16px;
+    --body1: 18px;
     --body2: 14px;
     margin: 0px 0px;
     font-size: var(--body1);

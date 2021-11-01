@@ -8,22 +8,30 @@ import WorksView from "./sections/works"
 import { AnimatePresence } from "framer-motion"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { isBrowser } from "react-device-detect"
 import DestopSideBar from "./lib/components/appbar/desktop"
 import MobileAppBar from "./lib/components/appbar/mobile"
 
 function App() {
   const location = useLocation()
+  const tabletOrMobile = window.matchMedia("(max-width: 991px)")
 
   return (
-    <div style={{ display: "flex", flex: "1 1 auto", width: "100%" }}>
+    <div
+      style={{
+        display: "flex",
+        flex: "1 1 auto",
+        width: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <GlobalStyle />
       <Scaffold
         sidebar={
-          isBrowser ? (
-            <DestopSideBar logo={DarkLogo} />
-          ) : (
+          tabletOrMobile.matches ? (
             <MobileAppBar logo={DarkLogo} />
+          ) : (
+            <DestopSideBar logo={DarkLogo} />
           )
         }
         body={
