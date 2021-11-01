@@ -35,7 +35,7 @@ export const SHeading = styled.div`
 export const STitle = styled.text`
   hyphens: auto;
   margin-top: 6px;
-  font-size: Calc(1vw + 12px);
+  font-size: 18px;
   text-align: center;
 `
 
@@ -92,6 +92,6 @@ export const STabText = styled.text`
   text-align: center;
   justify-content: center;
   display: flex;
-  font-size: 16px;
+  font-size: (--secondarybody);
   margin: 0px 4px;
 `

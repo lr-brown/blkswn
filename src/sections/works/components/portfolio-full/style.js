@@ -31,7 +31,6 @@ export const STop = styled(motion.div)`
 export const SBody = styled(motion.div)`
   flex-direction: row;
   margin-top: 16px;
-  padding: 8px 8px;
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
@@ -49,6 +48,7 @@ export const SIcon = styled(motion.img)`
 export const SScreenShot = styled.img`
   border-radius: 6px;
   width: 100%;
+  cursor: pointer;
 `
 
 export const SImg = styled.div`
@@ -65,7 +65,7 @@ export const SSlideShow = styled.div`
 `
 
 export const SHeader = styled(motion.div)`
-  font-size: 48px;
+  font-size: var(--title1);
   display: flex;
   font-weight: bolder;
 `
@@ -73,13 +73,14 @@ export const SDescriptionBG = styled(motion.div)`
   justify-content: center;
   flex: 1;
   display: flex;
+  max-height: 100%;
 `
 export const SDescription = styled(motion.div)`
-  font-size: 18px;
+  font-size: var(--body);
   display: flex;
   height: 100%;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   ::-webkit-scrollbar {
     width: 16px;
   }
@@ -100,7 +101,7 @@ export const SQuestion = styled(motion.span)`
   font-weight: bold;
 `
 export const SAnswer = styled(motion.span)`
-  font-size: var(--body1);
+  font-size: var(--body);
   border-radius: 8px;
   display: flex;
   width: fit-content;

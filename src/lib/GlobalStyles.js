@@ -12,18 +12,6 @@ const Dark = css`
   }
 `
 
-// const Light = css`
-//   :root {
-//     --accent: #3e0b47;
-//     --sidetab: #e0e0e0;
-//     --backgroundColor: #ffffff;
-//     --primaryTextColor: #000000;
-//     --icons: #000000;
-//     --buttons: #ffcdc3;
-//     --buttonsAlt: #f7ddd3;
-//   }
-// `
-
 const GlobalStyle = createGlobalStyle`
 
    ${Dark}
@@ -47,16 +35,21 @@ button{
 
 #root {
     // Font sizes
-    --title1: 32px;
-    --title2: 24px;
-    --headline: 20px;
-    --body1: 18px;
-    --body2: 14px;
+    --title1: 48px;
+    --title2: 28px;
+    --headline: 22px;
+    --body: 18px;
+    --secondarybody: 16px;
     margin: 0px 0px;
-    font-size: var(--body1);
+    font-size: var(--body);
     display: flex;
     align-items: center;
     flex-direction: column;
+    * { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
 }
 .slick-prev:before,
 .slick-next:before

@@ -9,6 +9,7 @@ export const SCard = styled(motion.div)`
   aspect-ratio: 1/1.25;
   margin: 12px 8px;
   height: 350px;
+  padding: 8px;
   border-radius: 16px;
   background-color: var(--buttons);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
@@ -23,7 +24,7 @@ export const SIcon = styled(motion.img)`
 
 export const SHeader = styled(motion.div)`
   display: flex;
-  font-size: var(--title1);
+  font-size: var(--title2);
   text-align: center;
   font-weight: bold;
 `

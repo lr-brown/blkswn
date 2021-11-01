@@ -42,7 +42,7 @@ const DestopSideBar = ({ logo }) => {
   return (
     <SSideBar>
       <SHeading>
-        <SLogo src={logo} alt="Logo" />
+        <SLogo src={logo} alt="Logo" onClick={() => history.push("/")} />
         <STitle>
           {" "}
           Logan Brown

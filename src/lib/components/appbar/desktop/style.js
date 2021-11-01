@@ -8,8 +8,7 @@ export const SSideBar = styled.div`
   position: sticky;
   border-radius: 20px;
   width: 225px;
-  height: 100vh;
-  max-height: 852px;
+  max-height: 100vh;
   font-size: var(--title2);
   flex-direction: column;
   overflow-y: auto;
@@ -29,8 +28,8 @@ export const SHeading = styled.div`
 `
 export const STitle = styled.text`
   hyphens: auto;
-  margin-top: 6px;
-  font-size: 18px;
+  margin-top: 8px;
+  font-size: var(--headline);
   text-align: center;
   font-weight: 600;
 `
@@ -73,6 +72,6 @@ export const STabText = styled.text`
   text-align: center;
   justify-content: center;
   display: flex;
-  font-size: 16px;
+  font-size: var(--secondarybody);
   margin: 0px 4px;
 `

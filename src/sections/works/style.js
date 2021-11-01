@@ -10,20 +10,18 @@ export const SBody = styled(motion.div)`
 
 export const SHeader = styled.text`
   display: flex;
-  font-size: 3.5vw;
+  font-size: var(--title1);
   text-align: center;
   margin-top: 24px;
+  font-weight: 600;
 `
-
-export const STitle = styled.text`
-  font-size: 4vw;
-  text-align: center;
-  align-self: center;
-`
-export const SText = styled.text`
+export const SCards = styled.div`
   display: flex;
-  font-size: var(--title1);
-  text-align: left;
-  line-height: 200%;
-  margin: 0px 32px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  align-self: center;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
 `

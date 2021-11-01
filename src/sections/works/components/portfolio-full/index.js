@@ -24,7 +24,7 @@ import { isDesktop } from "react-device-detect"
 
 const imageUrl = ""
 
-const CardModal = ({ layout, exit, content }) => {
+const CardModal = ({ layout, exit, content, openSlide }) => {
   const Arrow = ({ onClick, className, prev }) => {
     return (
       <button
@@ -79,6 +79,7 @@ const CardModal = ({ layout, exit, content }) => {
                     <SScreenShot
                       src={imageUrl + screenshot}
                       key={index}
+                      onClick={() => openSlide(index, content.title)}
                       alt="HI"
                     />
                   ))}

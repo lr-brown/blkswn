@@ -36,7 +36,7 @@ export const SPicture = styled.img`
 
 export const STitle = styled.text`
   display: flex;
-  font-size: Calc(24px + 2vw);
+  font-size: var(--title1);
   text-align: center;
   align-self: center;
   font-weight: 600;
@@ -59,7 +59,8 @@ export const SText = styled.text`
   display: flex;
   text-align: center;
   flex-direction: column;
-  font-size: var(--body1);
+  font-size: var(--body);
+  margin-top: 8px;
 `
 export const SAboutMe = styled.div`
   display: flex;

@@ -23,9 +23,9 @@ const MobileAppBar = ({ logo }) => {
   }
 
   const [menu, setMenu] = useState("none")
+  const history = useHistory()
 
   const Tab = ({ page, icon, label }) => {
-    const history = useHistory()
     return (
       <STab
         onClick={() => {
@@ -45,7 +45,7 @@ const MobileAppBar = ({ logo }) => {
     <div>
       <STopBar>
         <SImage>
-          <SLogo src={logo} />
+          <SLogo src={logo} onClick={() => history.push("/")} />
         </SImage>
         <SHeading>
           <STitle>Logan Brown</STitle>
