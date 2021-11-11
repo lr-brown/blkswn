@@ -46,9 +46,9 @@ export const SIcon = styled(motion.img)`
 `
 
 export const SScreenShot = styled.img`
-  border-radius: 6px;
   width: 100%;
   cursor: pointer;
+  border-radius: 6px;
 `
 
 export const SImg = styled.div`
@@ -57,9 +57,10 @@ export const SImg = styled.div`
 
 export const SSlideShow = styled.div`
   align-items: center;
+  flex-direction: column;
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 100%;
   width: ${isDesktop ? "50%" : "100%"};
 `
@@ -92,7 +93,7 @@ export const SDescription = styled(motion.div)`
     border-radius: 10px;
   }
 `
-export const SQuestion = styled(motion.span)`
+export const SQuestion = styled(motion.h2)`
   font-size: var(--title2);
   display: flex;
   width: fit-content;
@@ -100,7 +101,7 @@ export const SQuestion = styled(motion.span)`
   margin-bottom: 8px;
   font-weight: bold;
 `
-export const SAnswer = styled(motion.span)`
+export const SAnswer = styled(motion.p)`
   font-size: var(--body);
   border-radius: 8px;
   display: flex;

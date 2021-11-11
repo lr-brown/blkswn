@@ -1,7 +1,7 @@
 import React from "react"
 import Scaffold from "./lib/components/scaffold"
 import GlobalStyle from "./lib/GlobalStyles"
-import DarkLogo from "./lib/logos/dark_logo.png"
+import DarkLogo from "./lib/images/dark_logo.png"
 import IntroView from "./sections/intro"
 import { Switch, Route, useLocation } from "react-router-dom"
 import WorksView from "./sections/works"
@@ -13,7 +13,6 @@ import MobileAppBar from "./lib/components/appbar/mobile"
 
 function App() {
   const location = useLocation()
-  const tabletOrMobile = window.matchMedia("(max-width: 991px)")
 
   return (
     <div
@@ -28,11 +27,10 @@ function App() {
       <GlobalStyle />
       <Scaffold
         sidebar={
-          tabletOrMobile.matches ? (
+          <>
             <MobileAppBar logo={DarkLogo} />
-          ) : (
             <DestopSideBar logo={DarkLogo} />
-          )
+          </>
         }
         body={
           <AnimatePresence exitBeforeEnter initial={false}>

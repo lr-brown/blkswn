@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import { AnimatePresence } from "framer-motion"
-import * as SVG from "../../../svg"
+import * as SVG from "../../../icons"
 import {
   SHeading,
   SLogo,
@@ -74,6 +74,16 @@ const MobileAppBar = ({ logo }) => {
         >
           <Tab page="/" icon="aboutMe" label="About Me" />
           <Tab page="/works" icon="portfolio" label="My Work" />
+          <Tab
+            onCLick={() =>
+              window.open(
+                "https://docs.google.com/document/d/1xKqSKlgiYtP053rVNgCdgxbEzGZYJPxt5aoCfMOM0Lc/export?format=pdf",
+                "_blank"
+              )
+            }
+            icon="resume"
+            label="My Resume"
+          />
         </SMenu>
       </AnimatePresence>
     </div>

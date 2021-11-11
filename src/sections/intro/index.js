@@ -6,7 +6,6 @@ import {
   SBody,
   STitle,
   SContent,
-  SPictureDiv,
   SAboutMe,
 } from "./style"
 import Logan from "../../lib/images/logan.jpeg"
@@ -20,15 +19,12 @@ const IntroView = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div style={{ flex: 1 }}>
-        <SHello>
-          Hi, my name is Logan!
-          <br />I want to help you change the world with your ideas.
-        </SHello>
-      </div>
-
       <SContent>
         <SAboutMe>
+          <SHello>
+            Hi, my name is Logan!
+            <br />I want to help you change the world with your ideas.
+          </SHello>
           <STitle>Introduction</STitle>
           <SText>
             I am a Junior at Wesleyan University studying Computer Science and
@@ -41,8 +37,8 @@ const IntroView = () => {
             at it). I am a middle child which naturally means that I am the most
             responsible, self-driven and forgotten. I have three dogs (Tucker,
             Diesel, and Sadie) and two tortoises (Skyy and Max).
-            <br />
-            <br />
+          </SText>
+          <SText>
             I’ve always known that I wanted to do something relating to creating
             and developing. In my early adolescence, I had set my sights on
             wanting to be an Inventor. Once I developed the vocabulary to better
@@ -52,8 +48,8 @@ const IntroView = () => {
             completing these courses I realized how much I hated physics, but
             loved programming. Soon, my aspirations quickly shifted and my
             passion evolved into wanting to become a Software Engineer.
-            <br />
-            <br />
+          </SText>
+          <SText>
             In most of my projects I work in the front end. When I’m coding, I
             enjoy listening to R&B, Rap, and Jazz music. Some notable artists
             include: Smino, Ari Lennox, and Jhené Aiko. I hope you take the time
@@ -62,9 +58,7 @@ const IntroView = () => {
             to working with you!
           </SText>
         </SAboutMe>
-        <SPictureDiv>
-          <SPicture src={Logan} alt={"A photo of Logan"} />
-        </SPictureDiv>
+        <SPicture src={Logan} alt={"A photo of Logan"} />
       </SContent>
     </SBody>
   )

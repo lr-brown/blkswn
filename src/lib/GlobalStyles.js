@@ -23,6 +23,7 @@ body {
     background: var(--backgroundColor);
     line-height: normal;
     color:var(--primaryTextColor);
+    
   }
 button{
   background: none;
@@ -31,6 +32,7 @@ button{
   border: none;
   font-weight: bold;
   font-family:'Roboto', sans-serif;
+  
 }
 
 #root {
@@ -38,9 +40,9 @@ button{
     --title1: 48px;
     --title2: 28px;
     --headline: 22px;
-    --body: 18px;
-    --secondarybody: 16px;
-    margin: 0px 0px;
+    --body: 16px;
+    --secondarybody: 14px;
+    height: 100vh;
     font-size: var(--body);
     display: flex;
     align-items: center;
@@ -48,7 +50,7 @@ button{
     * { 
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
-     box-sizing: border-box; 
+    box-sizing: border-box; 
 }
 }
 .slick-prev:before,

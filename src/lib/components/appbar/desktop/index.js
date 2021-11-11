@@ -1,6 +1,6 @@
 import React from "react"
 import { useHistory, useLocation } from "react-router-dom"
-import * as SVG from "../../../svg"
+import * as SVG from "../../../icons"
 import {
   SSideBar,
   SHeading,
@@ -15,24 +15,33 @@ import {
 
 const Tab = ({ onCLick, icon, label }) => {
   return (
-    <STab
-      id={label}
-      onClick={onCLick}
-      whileHover={{
-        scale: 1.05,
-        transition: { duration: 0.05 },
-      }}
-      whileFocus={{
-        scale: 1.05,
-        transition: { duration: 0.05 },
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        flex: "1",
       }}
     >
-      <SVG.Squircle size={"100%"} />
-      <STabBody>
-        <STabIcon>{SVG.getTabIcon(icon)}</STabIcon>
-        <STabText>{label}</STabText>
-      </STabBody>
-    </STab>
+      <STab
+        id={label}
+        onClick={onCLick}
+        whileHover={{
+          scale: 1.05,
+          transition: { duration: 0.05 },
+        }}
+        whileFocus={{
+          scale: 1.05,
+          transition: { duration: 0.05 },
+        }}
+      >
+        <SVG.Squircle size={"100%"} />
+        <STabBody>
+          <STabIcon>{SVG.getTabIcon(icon, "3.5vw")}</STabIcon>
+        </STabBody>
+      </STab>
+      <STabText>{label}</STabText>
+    </div>
   )
 }
 
@@ -52,8 +61,8 @@ const DestopSideBar = ({ logo }) => {
       <SSvg>
         <Tab
           onCLick={() => history.push("/", { prevPath: location.pathname })}
-          icon="aboutMe"
-          label="About Me"
+          icon="home"
+          label="Home"
           index={1}
         />
         <Tab

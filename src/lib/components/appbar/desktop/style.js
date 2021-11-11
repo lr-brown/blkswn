@@ -2,34 +2,37 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 export const SSideBar = styled.div`
-  display: flex;
+  display: none;
   top: 0px;
   margin-left: 8px;
+  padding: 4px;
   position: sticky;
   border-radius: 20px;
-  width: 225px;
-  max-height: 100vh;
+  width: 14%;
+  height: 100vh;
   font-size: var(--title2);
   flex-direction: column;
   overflow-y: auto;
+  justify-content: center;
+  @media screen and (min-width: 1023px) {
+    display: flex;
+  }
 `
 export const SLogo = styled.img`
-  width: 50%;
+  max-width: 50%;
   display: flex;
   object-fit: contain;
+  padding: 4px;
 `
 export const SHeading = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  margin: 12px 0px;
 `
 export const STitle = styled.text`
   hyphens: auto;
-  margin-top: 8px;
-  font-size: var(--headline);
+  font-size: var(--title2);
   text-align: center;
   font-weight: 600;
 `
@@ -37,7 +40,7 @@ export const STitle = styled.text`
 export const SSvg = styled.div`
   display: flex;
   align-items: center;
-  flex: 3;
+  max-height: 100%;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 8px;
@@ -48,9 +51,10 @@ export const STab = styled(motion.button)`
   justify-content: center;
   align-items: center;
   fill: var(--buttons);
-  width: 85%;
+  width: 80%;
   cursor: pointer;
-  margin: 4px;
+  margin: 0px;
+  padding: 0px;
   color: var(--primaryTextColor);
   :hover {
     fill: var(--buttonsAlt);
@@ -72,6 +76,6 @@ export const STabText = styled.text`
   text-align: center;
   justify-content: center;
   display: flex;
-  font-size: var(--secondarybody);
-  margin: 0px 4px;
+  font-size: var(--headline);
+  font-weight: 500;
 `

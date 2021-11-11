@@ -16,7 +16,7 @@ import {
   SAnswer,
   SImg,
 } from "./style"
-import * as SVG from "../../../../lib/svg"
+import * as SVG from "../../../../lib/icons"
 import { AnimatePresence } from "framer-motion"
 import Slider from "react-slick"
 import { useEffect } from "react"
@@ -28,7 +28,7 @@ const CardModal = ({ layout, exit, content, openSlide }) => {
   const Arrow = ({ onClick, className, prev }) => {
     return (
       <button
-        style={{ fontSize: "0px" }}
+        style={{ fontSize: "0px", fill: "white" }}
         type="button"
         onClick={onClick}
         className={`button button--text button--icon ${className}`}
@@ -42,8 +42,6 @@ const CardModal = ({ layout, exit, content, openSlide }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
     nextArrow: <Arrow />,
     prevArrow: <Arrow prev />,
   }
@@ -77,14 +75,15 @@ const CardModal = ({ layout, exit, content, openSlide }) => {
                 <Slider {...settings}>
                   {content["screenshots"].map((screenshot, index) => (
                     <SScreenShot
+                      onClick={() => openSlide(index, content.title)}
                       src={imageUrl + screenshot}
                       key={index}
-                      onClick={() => openSlide(index, content.title)}
                       alt="HI"
                     />
                   ))}
                 </Slider>
               </SImg>
+              Click to Enlarge
             </SSlideShow>
             {isDesktop ? (
               <SDescriptionBG>

@@ -7,12 +7,13 @@ const SScaffold = styled.main`
   flex-direction: row;
   width: 100%;
   align-items: center;
+  max-height: 100vh;
 
-  @media only screen and (max-width: 991px) {
+  @media screen and (max-width: 1023px) {
     flex-direction: column;
   }
 
-  @media only screen and (min-width: 1700px) {
+  @media screen and (min-width: 1700px) {
     width: 1700px;
     align-items: center;
     justify-content: center;
@@ -24,7 +25,7 @@ const SBody = styled.div`
   height: 100vh;
   width: 100%;
   overflow-y: auto;
-  @media (max-width: 991px) {
+  @media (max-width: 1023px) {
     height: 90vh;
   }
 `

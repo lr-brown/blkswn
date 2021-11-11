@@ -2,15 +2,18 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 export const STopBar = styled.div`
-  display: flex;
+  display: none;
   background: var(--backgroundColor);
   top: 0px;
   position: sticky;
   width: 100vw;
-  height: 10vh;
+  height: 60px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 1023px) {
+    display: flex;
+  }
 `
 
 export const SMore = styled.div`
@@ -48,7 +51,9 @@ export const SLogo = styled.img`
 export const SImage = styled.div`
   flex: 1;
   display: flex;
+  padding: 8px;
   justify-content: flex-start;
+  max-height: 100%;
 `
 
 export const SMenu = styled(motion.div)`
@@ -60,15 +65,19 @@ export const SMenu = styled(motion.div)`
   top: 10vh;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
+  overflow-y: auto;
   padding: 16px;
+  @media screen and (min-width: 1023px) {
+    display: none;
+  }
 `
 export const STab = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
   fill: var(--buttons);
-  width: 45%;
+  flex: 1;
   cursor: pointer;
   margin: 4px;
   color: var(--primaryTextColor);

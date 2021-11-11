@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 export const SBody = styled(motion.div)`
   display: flex;
-  flex: 1;
   flex-direction: column;
   align-items: center;
+  max-height: 100%;
 `
 
 export const SHello = styled.div`
@@ -13,17 +13,12 @@ export const SHello = styled.div`
   align-self: center;
   background-color: var(--buttons);
   border-radius: 20px;
-  margin: 16px;
-  padding: 24px;
+  padding: 16px;
   align-items: center;
   display: flex;
-  font-size: Calc(1vw + 18px);
+  font-size: var(--headline);
   font-weight: bold;
   text-align: center;
-`
-export const SPictureDiv = styled.div`
-  flex: 1;
-  padding: 16px;
 `
 
 export const SPicture = styled.img`
@@ -31,41 +26,39 @@ export const SPicture = styled.img`
   justify-self: center;
   border-radius: 20px;
   display: flex;
-  object-fit: contain;
+  object-fit: cover;
+  padding: 8px;
 `
 
-export const STitle = styled.text`
-  display: flex;
-  font-size: var(--title1);
+export const STitle = styled.h2`
+  font-size: var(--title2);
   text-align: center;
   align-self: center;
   font-weight: 600;
+  margin: 8px;
 `
 
 export const SContent = styled.div`
-  display: flex;
-  flex: 5;
-  flex-direction: row;
-  margin: 12px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  padding: 16px;
   justify-content: center;
-  width: 95%;
+  width: 100%;
+  height: 100%;
   @media only screen and (max-width: 1024px) {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 `
-export const SText = styled.text`
+export const SText = styled.p`
   display: flex;
   text-align: center;
   flex-direction: column;
   font-size: var(--body);
-  margin-top: 8px;
 `
-export const SAboutMe = styled.div`
+export const SAboutMe = styled.section`
   display: flex;
-  padding: 16px;
-  justify-content: space-evenly;
   flex-direction: column;
-  flex: 1;
+  justify-content: center;
+  padding: 8px;
 `
