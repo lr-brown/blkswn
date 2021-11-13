@@ -5,7 +5,6 @@ import {
   SIcon,
   STop,
   SOverlay,
-  SScreenShot,
   SSlideShow,
   SCancel,
   SBody,
@@ -16,35 +15,17 @@ import {
   SAnswer,
   SImg,
 } from "./style"
+import { motion } from "framer-motion"
 import * as SVG from "../../../../lib/icons"
 import { AnimatePresence } from "framer-motion"
-import Slider from "react-slick"
 import { useEffect } from "react"
 import { isDesktop } from "react-device-detect"
+import { useState } from "react"
 
 const imageUrl = ""
 
 const CardModal = ({ layout, exit, content, openSlide }) => {
-  const Arrow = ({ onClick, className, prev }) => {
-    return (
-      <button
-        style={{ fontSize: "0px", fill: "white" }}
-        type="button"
-        onClick={onClick}
-        className={`button button--text button--icon ${className}`}
-      >
-        <SVG.Arrow previous={prev} />
-      </button>
-    )
-  }
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    nextArrow: <Arrow />,
-    prevArrow: <Arrow prev />,
-  }
+  const [index, setIndex] = useState(0)
   const handleKeyDown = (event) => {
     if (event.keyCode === 27) {
       exit()
@@ -52,11 +33,19 @@ const CardModal = ({ layout, exit, content, openSlide }) => {
   }
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown, false)
-
     return () => {
       document.removeEventListener("keydown", handleKeyDown, false)
     }
   })
+
+  const changeSlide = (dir) => {
+    let len = content["screenshots"].length
+    dir === "next"
+      ? setIndex((index + 1) % len)
+      : index === 0
+      ? setIndex(len - 1)
+      : setIndex(index - 1)
+  }
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -71,19 +60,44 @@ const CardModal = ({ layout, exit, content, openSlide }) => {
           </STop>
           <SBody>
             <SSlideShow>
-              <SImg orientation={content.orientation}>
-                <Slider {...settings}>
-                  {content["screenshots"].map((screenshot, index) => (
-                    <SScreenShot
-                      onClick={() => openSlide(index, content.title)}
-                      src={imageUrl + screenshot}
-                      key={index}
-                      alt="HI"
-                    />
-                  ))}
-                </Slider>
+              <SImg>
+                <img
+                  onClick={() => openSlide(index, content.title)}
+                  src={content["screenshots"][index]}
+                  key={1}
+                  alt="HI"
+                />
+                <div
+                  style={{
+                    padding: "16px",
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
+                  }}
+                >
+                  <motion.button
+                    onClick={() => changeSlide()}
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <SVG.Arrow previous size="48px" />
+                  </motion.button>
+                  <h1
+                    style={{
+                      marginBlockStart: "0em",
+                      marginBlockEnd: "0em",
+                    }}
+                  >
+                    Click Image to Enlarge
+                  </h1>
+                  <motion.button
+                    onClick={() => changeSlide("next")}
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    <SVG.Arrow size="48px" />
+                  </motion.button>
+                </div>
               </SImg>
-              Click to Enlarge
             </SSlideShow>
             {isDesktop ? (
               <SDescriptionBG>

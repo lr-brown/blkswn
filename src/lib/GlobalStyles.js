@@ -30,8 +30,18 @@ button{
   cursor: pointer;
   border-radius: 8px;
   border: none;
+  padding:0px;
   font-weight: bold;
   font-family:'Roboto', sans-serif;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: center;
   
 }
 
@@ -52,39 +62,6 @@ button{
     -webkit-box-sizing: border-box; 
     box-sizing: border-box; 
 }
-}
-.slick-prev:before,
-.slick-next:before
-{
-    font-family: 'slick';
-    font-size: 0px;
-    line-height: 1;
-    opacity: 1;
-
-}
-
-.slick-prev,
-.slick-next
-{
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 48px;
-    height: 48px;
-    padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    cursor: pointer;
-}
-
-.slick-next
-{
-    right: -55px;
-}
-.slick-prev
-{
-    left: -55px;
 }
 
 `

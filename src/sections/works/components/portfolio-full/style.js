@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { isDesktop } from "react-device-detect"
 
 export const SCard = styled(motion.div)`
   position: fixed;
@@ -45,24 +44,32 @@ export const SIcon = styled(motion.img)`
   object-fit: contain;
 `
 
-export const SScreenShot = styled.img`
-  width: 100%;
-  cursor: pointer;
-  border-radius: 6px;
-`
-
 export const SImg = styled.div`
-  width: ${(props) => (props.orientation === "portrait" ? "40%" : "80%")};
+  padding: 16px;
+  max-height: 80%;
+  max-width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  img {
+    max-height: 100%;
+    max-width: 90%;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    border-radius: 6px;
+  }
 `
 
 export const SSlideShow = styled.div`
   align-items: center;
   flex-direction: column;
   display: flex;
-  flex: 1;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 100%;
-  width: ${isDesktop ? "50%" : "100%"};
+  width: 50%;
+  overflow-y: hidden;
 `
 
 export const SHeader = styled(motion.div)`
