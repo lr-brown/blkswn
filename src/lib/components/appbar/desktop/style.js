@@ -32,7 +32,7 @@ export const SHeading = styled.div`
 `
 export const STitle = styled.text`
   hyphens: auto;
-  font-size: var(--title2);
+  font-size: var(--headline);
   text-align: center;
   font-weight: 600;
 `

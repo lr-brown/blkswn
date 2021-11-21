@@ -31,6 +31,7 @@ button{
   border-radius: 8px;
   border: none;
   padding:0px;
+  margin: 0px;
   font-weight: bold;
   font-family:'Roboto', sans-serif;
   text-rendering: auto;

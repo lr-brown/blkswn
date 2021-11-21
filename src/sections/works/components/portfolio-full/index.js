@@ -9,26 +9,115 @@ import {
   SCancel,
   SBody,
   SDescription,
-  SBottom,
-  SDescriptionBG,
   SQuestion,
   SAnswer,
-  SImg,
+  SButton,
+  SFullScreen,
 } from "./style"
-import { motion } from "framer-motion"
 import * as SVG from "../../../../lib/icons"
 import { AnimatePresence } from "framer-motion"
 import { useEffect } from "react"
-import { isDesktop } from "react-device-detect"
+import { motion } from "framer-motion"
 import { useState } from "react"
 
-const imageUrl = ""
+const Accordion = ({ i, content, title, expanded, setExpanded }) => {
+  const isOpen = i === expanded
+  return (
+    <SQuestion
+      initial={false}
+      animate={{ background: isOpen ? "var(--buttonsAlt)" : "var(--accent)" }}
+      onClick={() => setExpanded(isOpen ? false : i)}
+    >
+      <motion.h1>{title}</motion.h1>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <SAnswer
+            key="content"
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { height: "auto" },
+              collapsed: {
+                height: 0,
+                marginBlockStart: "0em",
+                marginBlockEnd: "0em",
+              },
+            }}
+            transition={{ duration: 0.8 }}
+          >
+            {content}
+          </SAnswer>
+        )}
+      </AnimatePresence>
+    </SQuestion>
+  )
+}
+
+const SlideShow = ({ content, changeSlide, openSlide, index }) => {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "50px 1fr 48px",
+        maxWidth: "50%",
+        height: "100%",
+      }}
+    >
+      <SButton>
+        <motion.button
+          onClick={() => changeSlide(-1)}
+          whileHover={{ scale: 1.1 }}
+        >
+          <SVG.Arrow size="48px" previous />
+        </motion.button>
+      </SButton>
+      <AnimatePresence initial={false}>
+        <SSlideShow key={index}>
+          <motion.img
+            onClick={() => openSlide(index, content.title)}
+            src={content.screenshots[index]}
+            alt="cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          />
+          <SFullScreen>
+            <button onClick={() => openSlide(index, content.title)}>
+              Fullscreen
+            </button>
+          </SFullScreen>
+        </SSlideShow>
+      </AnimatePresence>
+
+      <SButton>
+        <motion.button
+          onClick={() => changeSlide(1)}
+          whileHover={{ scale: 1.1 }}
+        >
+          <SVG.Arrow size="48px" />
+        </motion.button>
+      </SButton>
+    </div>
+  )
+}
 
 const CardModal = ({ layout, exit, content, openSlide }) => {
   const [index, setIndex] = useState(0)
+  const [expanded, setExpanded] = useState(-1)
+
+  const changeSlide = (dir) => {
+    let len = content["screenshots"].length
+    dir < 0 && index === 0 ? setIndex(len - 1) : setIndex((index + dir) % len)
+  }
   const handleKeyDown = (event) => {
     if (event.keyCode === 27) {
       exit()
+    } else if (event.keyCode === 37) {
+      changeSlide(-1)
+    } else if (event.keyCode === 39) {
+      changeSlide(1)
     }
   }
   useEffect(() => {
@@ -38,86 +127,39 @@ const CardModal = ({ layout, exit, content, openSlide }) => {
     }
   })
 
-  const changeSlide = (dir) => {
-    let len = content["screenshots"].length
-    dir === "next"
-      ? setIndex((index + 1) % len)
-      : index === 0
-      ? setIndex(len - 1)
-      : setIndex(index - 1)
-  }
-
   return (
-    <AnimatePresence exitBeforeEnter>
-      <SOverlay>
-        <SCard layoutId={layout.body}>
-          <STop>
-            <SIcon src={imageUrl + content.logo} layoutId={layout.pic} />
-            <SHeader layoutId={layout.title}>{content.title}</SHeader>
-            <SCancel whileHover={{ scale: 1.1 }} onClick={exit}>
-              <SVG.Cross size="36px" />
-            </SCancel>
-          </STop>
-          <SBody>
-            <SSlideShow>
-              <SImg>
-                <img
-                  onClick={() => openSlide(index, content.title)}
-                  src={content["screenshots"][index]}
-                  key={1}
-                  alt="HI"
-                />
-                <div
-                  style={{
-                    padding: "16px",
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "space-evenly",
-                    alignItems: "center",
-                  }}
-                >
-                  <motion.button
-                    onClick={() => changeSlide()}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <SVG.Arrow previous size="48px" />
-                  </motion.button>
-                  <h1
-                    style={{
-                      marginBlockStart: "0em",
-                      marginBlockEnd: "0em",
-                    }}
-                  >
-                    Click Image to Enlarge
-                  </h1>
-                  <motion.button
-                    onClick={() => changeSlide("next")}
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    <SVG.Arrow size="48px" />
-                  </motion.button>
-                </div>
-              </SImg>
-            </SSlideShow>
-            {isDesktop ? (
-              <SDescriptionBG>
-                <SDescription>
-                  <SQuestion>What?</SQuestion>
-                  <SAnswer>{content.description.what}</SAnswer>
-                  <SQuestion>Who, Where and When?</SQuestion>
-                  <SAnswer>{content.description.when}</SAnswer>
-                  <SQuestion>How?</SQuestion>
-                  <SAnswer>{content.description.how}</SAnswer>
-                  <SQuestion>Why?</SQuestion>
-                  <SAnswer>{content.description.why}</SAnswer>
-                </SDescription>
-              </SDescriptionBG>
-            ) : null}
-          </SBody>
-          <SBottom></SBottom>
-        </SCard>
-      </SOverlay>
-    </AnimatePresence>
+    <SOverlay>
+      <SCard layoutId={layout.body}>
+        <STop>
+          <SIcon src={content.logo} layoutId={layout.pic} />
+          <SHeader layoutId={layout.title}>{content.title}</SHeader>
+          <SCancel whileHover={{ scale: 1.2 }} onClick={exit}>
+            <SVG.Cross size="36px" />
+          </SCancel>
+        </STop>
+        <SBody>
+          {content.screenshots.length > 0 ? (
+            <SlideShow
+              content={content}
+              changeSlide={changeSlide}
+              openSlide={openSlide}
+              index={index}
+            />
+          ) : null}
+          <SDescription>
+            {Object.keys(content.description).map((question, index) => (
+              <Accordion
+                i={index}
+                content={content.description[question]}
+                title={question}
+                expanded={expanded}
+                setExpanded={setExpanded}
+              />
+            ))}
+          </SDescription>
+        </SBody>
+      </SCard>
+    </SOverlay>
   )
 }
 

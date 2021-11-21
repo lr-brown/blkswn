@@ -31,9 +31,9 @@ export const SBody = styled(motion.div)`
   flex-direction: row;
   margin-top: 16px;
   display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  max-height: 90%;
+  width: 100%;
+  height: 90%;
+  justify-content: space-evenly;
 `
 
 export const SIcon = styled(motion.img)`
@@ -44,32 +44,52 @@ export const SIcon = styled(motion.img)`
   object-fit: contain;
 `
 
-export const SImg = styled.div`
-  padding: 16px;
-  max-height: 80%;
+export const SSlideShow = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  grid-area: 1/2/1/3;
+  max-height: 100%;
   max-width: 100%;
   justify-content: center;
-  flex-direction: column;
-  display: flex;
   align-items: center;
+  overflow-y: hidden;
   img {
-    max-height: 100%;
-    max-width: 90%;
-    width: auto;
-    height: auto;
+    object-fit: contain;
+    max-height: 90%;
+    max-width: 100%;
+    display: block;
     cursor: pointer;
     border-radius: 6px;
   }
 `
-
-export const SSlideShow = styled.div`
+export const SFullScreen = styled.div`
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  button {
+    font-size: var(--title2);
+    color: white;
+    background-color: var(--buttonsAlt);
+    padding: 8px;
+    border-radius: 8px;
+  }
+  :hover {
+    opacity: 1;
+  }
+`
+export const SButton = styled(motion.div)`
+  height: 100%;
   display: flex;
   justify-content: center;
-  height: 100%;
-  width: 50%;
-  overflow-y: hidden;
+  align-items: center;
+  button {
+    height: fit-content;
+  }
 `
 
 export const SHeader = styled(motion.div)`
@@ -77,44 +97,40 @@ export const SHeader = styled(motion.div)`
   display: flex;
   font-weight: bolder;
 `
-export const SDescriptionBG = styled(motion.div)`
-  justify-content: center;
-  flex: 1;
-  display: flex;
-  max-height: 100%;
-`
 export const SDescription = styled(motion.div)`
+  justify-content: center;
+  width: 50%;
+  display: flex;
+  padding: 16px;
+  max-height: 100%;
   font-size: var(--body);
-  display: flex;
-  height: 100%;
   flex-direction: column;
-  overflow-y: auto;
-  ::-webkit-scrollbar {
-    width: 16px;
-  }
-  ::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--accent);
-    border-radius: 10px;
-  }
+  overflow-y: hidden;
+  overflow-x: hidden;
 `
-export const SQuestion = styled(motion.h2)`
-  font-size: var(--title2);
+export const SQuestion = styled(motion.div)`
+  h1 {
+    font-size: var(--title2);
+    font-weight: bold;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+  }
+  cursor: pointer;
+  margin: 8px;
   display: flex;
-  width: fit-content;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
   align-items: center;
-  margin-bottom: 8px;
-  font-weight: bold;
 `
 export const SAnswer = styled(motion.p)`
   font-size: var(--body);
   border-radius: 8px;
   display: flex;
-  width: fit-content;
-  align-items: center;
-  margin-bottom: 16px;
+  width: 100%;
+  overflow-y: hidden;
+  white-space: pre-wrap;
 `
 
 export const SOverlay = styled(motion.div)`
@@ -129,10 +145,4 @@ export const SOverlay = styled(motion.div)`
 export const SCancel = styled(motion.button)`
   margin: 8px 8px;
   align-self: flex-start;
-`
-
-export const SBottom = styled(motion.div)`
-  display: flex;
-  height: 10%;
-  width: 100%;
 `

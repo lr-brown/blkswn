@@ -1,5 +1,6 @@
 import React from "react"
-import { SButton, SCard, SHeader, SIcon } from "./style"
+import { getLogo } from "../../../../lib/icons"
+import { SButton, SCard, SHeader, SIcon, SLogos } from "./style"
 
 const imageUrl = ""
 
@@ -16,6 +17,7 @@ const Card = ({ content, tab, onClick }) => {
       >
         Learn More
       </SButton>
+      <SLogos>{content.icons.map((logo) => getLogo(logo, "32px"))} </SLogos>
     </SCard>
   )
 }
