@@ -3,7 +3,6 @@ import Card from "./components/portfolio-cards"
 import CardModal from "./components/portfolio-full"
 import { AnimateSharedLayout } from "framer-motion"
 import { SBody, SCards, SHeader } from "./style"
-import { isDesktop } from "react-device-detect"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
 import assets from "../../lib/assets/assets.json"
@@ -22,7 +21,7 @@ const WorksView = () => {
   }
 
   const handleClick = (title) => {
-    if (modal === "" && isDesktop) {
+    if (modal === "" && window.matchMedia("(min-width: 1023px)").matches) {
       setModal(title)
       setTab(-1)
     } else {

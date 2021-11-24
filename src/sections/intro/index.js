@@ -9,9 +9,7 @@ import {
   SAboutMe,
 } from "./style"
 import Logan from "../../lib/images/logan.jpeg"
-import { deviceType } from "react-device-detect"
 const IntroView = () => {
-  console.log(deviceType)
   return (
     <SBody
       initial={{ opacity: 0 }}
