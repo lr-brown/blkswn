@@ -6,8 +6,6 @@ import IntroView from "./sections/intro"
 import { Switch, Route, useLocation } from "react-router-dom"
 import WorksView from "./sections/works"
 import { AnimatePresence } from "framer-motion"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
 import DestopSideBar from "./lib/components/appbar/desktop"
 import MobileAppBar from "./lib/components/appbar/mobile"
 

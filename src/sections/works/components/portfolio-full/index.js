@@ -23,11 +23,7 @@ import { useState } from "react"
 const Accordion = ({ i, content, title, expanded, setExpanded }) => {
   const isOpen = i === expanded
   return (
-    <SQuestion
-      initial={false}
-      animate={{ background: isOpen ? "var(--buttonsAlt)" : "var(--accent)" }}
-      onClick={() => setExpanded(isOpen ? false : i)}
-    >
+    <SQuestion initial={false} onClick={() => setExpanded(isOpen ? false : i)}>
       <motion.h1>{title}</motion.h1>
       <AnimatePresence initial={false}>
         {isOpen && (
@@ -44,7 +40,7 @@ const Accordion = ({ i, content, title, expanded, setExpanded }) => {
                 marginBlockEnd: "0em",
               },
             }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
           >
             {content}
           </SAnswer>

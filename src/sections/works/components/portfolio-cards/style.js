@@ -30,7 +30,7 @@ export const SHeader = styled(motion.div)`
 `
 
 export const SButton = styled(motion.button)`
-  background-color: var(--accent);
+  background-color: var(--buttonsAlt);
   color: var(--primaryTextColor);
   cursor: pointer;
   padding: 12px 12px;

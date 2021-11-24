@@ -123,6 +123,7 @@ export const SQuestion = styled(motion.div)`
   padding: 16px;
   width: 100%;
   align-items: center;
+  background-color: var(--buttonsAlt);
 `
 export const SAnswer = styled(motion.p)`
   font-size: var(--body);

@@ -2,8 +2,6 @@ import { createGlobalStyle, css } from "styled-components"
 
 const Dark = css`
   :root {
-    --accent: #464962;
-    --sidetab: #2d394e;
     --backgroundColor: #171d26;
     --primaryTextColor: #ffffff;
     --icons: #ffffff;
