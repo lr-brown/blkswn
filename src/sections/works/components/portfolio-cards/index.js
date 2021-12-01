@@ -1,22 +1,26 @@
+import { motion } from "framer-motion"
 import React from "react"
+import Button from "../../../../lib/components/button"
 import { getLogo } from "../../../../lib/icons"
-import { SButton, SCard, SHeader, SIcon, SLogos } from "./style"
+import { SButtonRow, SCard, SHeader, SLogos } from "./style"
 
-const imageUrl = ""
-
-const Card = ({ content, tab, onClick }) => {
-  const layoutId = { pic: "pic", body: "body", title: "title" }
+const Card = ({ content, onClick, layoutId, openSlide }) => {
   return (
     <SCard layoutId={layoutId.body}>
-      <SIcon src={imageUrl + content.logo} layoutId={layoutId.pic} />
+      <motion.img src={content.logo} layoutId={layoutId.pic} />
       <SHeader layoutId={layoutId.title}>{content.title}</SHeader>
-      <SButton
-        onClick={onClick}
-        tabIndex={tab}
-        whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
-      >
-        Learn More
-      </SButton>
+      <SButtonRow>
+        <Button
+          handleClick={onClick}
+          text={"Reflection"}
+          color={"var(--secondaryColor)"}
+        />
+        <Button
+          handleClick={openSlide}
+          text={"Gallery"}
+          color={"var(--secondaryColor)"}
+        />
+      </SButtonRow>
       <SLogos>{content.icons.map((logo) => getLogo(logo, "32px"))} </SLogos>
     </SCard>
   )

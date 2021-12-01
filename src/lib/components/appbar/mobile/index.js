@@ -1,91 +1,22 @@
-import React, { useState } from "react"
-import { useHistory } from "react-router-dom"
-import { AnimatePresence } from "framer-motion"
-import * as SVG from "../../../icons"
-import {
-  SHeading,
-  SLogo,
-  STitle,
-  STopBar,
-  SMore,
-  SImage,
-  SMenu,
-  STab,
-  STabBody,
-  STabIcon,
-  STabText,
-} from "./style"
+import React from "react"
+import { SSections, SLogo, STopBar, SImage, SButton } from "./style"
 
 const MobileAppBar = ({ logo }) => {
-  const variants = {
-    open: { opacity: 1 },
-    closed: { opacity: 0 },
-  }
-
-  const [menu, setMenu] = useState("none")
-  const history = useHistory()
-
-  const Tab = ({ page, icon, label }) => {
-    return (
-      <STab
-        onClick={() => {
-          history.push(page)
-          setMenu("none")
-        }}
-      >
-        <SVG.Squircle size={"100%"} />
-        <STabBody>
-          <STabIcon>{SVG.getTabIcon(icon)}</STabIcon>
-          <STabText>{label}</STabText>
-        </STabBody>
-      </STab>
-    )
-  }
   return (
     <div>
       <STopBar>
         <SImage>
-          <SLogo src={logo} onClick={() => history.push("/")} />
+          <SLogo src={logo} />
         </SImage>
-        <SHeading>
-          <STitle>Logan Brown</STitle>
-          <STitle>Developer</STitle>
-        </SHeading>
-        <SMore>
-          <div
-            onClick={() => {
-              menu === "flex" ? setMenu("none") : setMenu("flex")
-            }}
-          >
-            {menu === "flex" ? (
-              <SVG.Cross size="36px" />
-            ) : (
-              <SVG.Hamburger size="36px" />
-            )}
-          </div>
-        </SMore>
+        <SSections>
+          <SButton id="#home" href="#home">
+            Home
+          </SButton>
+          <SButton id="#works" href="#works">
+            Work
+          </SButton>
+        </SSections>
       </STopBar>
-      <AnimatePresence>
-        <SMenu
-          display={menu}
-          animate={menu === "none" ? "closed" : "open"}
-          variants={variants}
-          transition={{ duration: 0.5 }}
-        >
-          <Tab page="/" icon="aboutMe" label="About Me" />
-          <Tab page="/works" icon="portfolio" label="My Work" />
-          <Tab
-            onCLick={() =>
-              window.open(
-                "https://docs.google.com/document/d/1xKqSKlgiYtP053rVNgCdgxbEzGZYJPxt5aoCfMOM0Lc/export?format=pdf",
-                "_blank"
-              )
-            }
-            icon="resume"
-            label="My Resume"
-          />
-        </SMenu>
-      </AnimatePresence>
     </div>
   )
 }

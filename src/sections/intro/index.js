@@ -1,28 +1,11 @@
 import React from "react"
-import {
-  SHello,
-  SPicture,
-  SText,
-  SBody,
-  STitle,
-  SContent,
-  SAboutMe,
-} from "./style"
+import { SPicture, SText, SBody, STitle, SContent, SAboutMe } from "./style"
 import Logan from "../../lib/images/logan.jpeg"
 const IntroView = () => {
   return (
-    <SBody
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <SBody id="home">
       <SContent>
         <SAboutMe>
-          <SHello>
-            Hi, my name is Logan!
-            <br />I want to help you change the world with your ideas.
-          </SHello>
           <STitle>Introduction</STitle>
           <SText>
             I am a Junior at Wesleyan University studying Computer Science and
@@ -36,6 +19,7 @@ const IntroView = () => {
             responsible, self-driven and forgotten. I have three dogs (Tucker,
             Diesel, and Sadie) and two tortoises (Skyy and Max).
           </SText>
+          <br />
           <SText>
             I’ve always known that I wanted to do something relating to creating
             and developing. In my early adolescence, I had set my sights on
@@ -47,6 +31,7 @@ const IntroView = () => {
             loved programming. Soon, my aspirations quickly shifted and my
             passion evolved into wanting to become a Software Engineer.
           </SText>
+          <br />
           <SText>
             In most of my projects I work in the front end. When I’m coding, I
             enjoy listening to R&B, Rap, and Jazz music. Some notable artists

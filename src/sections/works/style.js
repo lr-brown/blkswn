@@ -1,27 +1,32 @@
-import { motion } from "framer-motion"
 import styled from "styled-components"
 
-export const SBody = styled(motion.div)`
+export const SBody = styled.div`
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `
 
-export const SHeader = styled.text`
+export const SHeader = styled.h1`
   display: flex;
   font-size: var(--title1);
   text-align: center;
-  margin-top: 24px;
   font-weight: 600;
+  margin-top: 8px;
+`
+
+export const SHighlights = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 `
 export const SCards = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-  align-self: center;
-  flex-wrap: wrap;
-  flex: 1 1 auto;
+  display: grid;
+  grid-gap: 24px;
+  width: 90%;
+  grid-template-columns: repeat(3, 1fr);
+  @media only screen and (max-width: 1023px) {
+    grid-template-columns: 1fr;
+  }
 `

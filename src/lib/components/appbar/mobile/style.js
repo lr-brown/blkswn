@@ -28,18 +28,22 @@ export const SMore = styled.div`
     fill: white;
   }
 `
-export const SHeading = styled.div`
+export const SSections = styled.div`
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
 `
-
-export const STitle = styled.text`
-  hyphens: auto;
-  margin-top: 6px;
-  font-size: 18px;
-  text-align: center;
+export const SButton = styled.a`
+  border-radius: 30%;
+  font-size: var(--headline);
+  flex: 1;
+  padding: 8px;
+  font-weight: bold;
+  color: white;
+  :hover {
+    background-color: var(--primaryColorTint);
+  }
 `
 
 export const SLogo = styled.img`
@@ -76,13 +80,13 @@ export const STab = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: var(--buttons);
+  fill: var(--primaryColor);
   flex: 1;
   cursor: pointer;
   margin: 4px;
   color: var(--primaryTextColor);
   :hover {
-    fill: var(--buttonsAlt);
+    fill: var(--secondaryColor);
   }
 `
 
@@ -96,11 +100,4 @@ export const STabIcon = styled.div`
   margin-bottom: 6px;
   display: flex;
   justify-content: center;
-`
-export const STabText = styled.text`
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  font-size: (--secondarybody);
-  margin: 0px 4px;
 `

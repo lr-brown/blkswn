@@ -1,81 +1,132 @@
 import React, { useState } from "react"
 import Card from "./components/portfolio-cards"
 import CardModal from "./components/portfolio-full"
-import { AnimateSharedLayout } from "framer-motion"
-import { SBody, SCards, SHeader } from "./style"
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion"
+import { SBody, SCards, SHeader, SHighlights } from "./style"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
 import assets from "../../lib/assets/assets.json"
+import { HighLightedWork } from "./components/highlight"
 
 const WorksView = () => {
-  const [modal, setModal] = useState("")
-  const [tab, setTab] = useState(0)
+  const [modal, setModal] = useState(false)
+  const [selProject, setProject] = useState("")
+  const [content, setContent] = useState({})
   const [isOpen, setOpen] = useState(false)
   const [photoIndex, setIndex] = useState(0)
   const [images, setImages] = useState([])
+  const [iconLayout, setIcon] = useState(false)
 
-  const openSlide = (index, title) => {
-    setImages(assets[title]["screenshots"])
+  const openSlide = (title) => {
+    setImages(assets["others"][title]["screenshots"])
     setOpen(true)
-    setIndex(index)
+    setIndex(0)
   }
 
-  const handleClick = (title) => {
-    if (modal === "" && window.matchMedia("(min-width: 1023px)").matches) {
-      setModal(title)
-      setTab(-1)
+  const openGallery = (title) => {
+    setImages(
+      assets["highlights"][title]["cover"].concat(
+        assets["highlights"][title]["screenshots"]
+      )
+    )
+    setOpen(true)
+    setIndex(0)
+  }
+
+  const handleClick = (title, content, iconLayout) => {
+    if (!modal && window.matchMedia("(min-width: 1023px)").matches) {
+      setModal(true)
+      setProject(title)
+      setContent(content)
+      setIcon(iconLayout)
     } else {
       openSlide(0, title)
     }
   }
-
   const handleExit = () => {
-    setModal("")
+    setProject("")
+    setModal(false)
   }
 
   return (
-    <SBody
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <SHeader>My Work</SHeader>
-      <SCards>
-        {Object.keys(assets).map((project, index) => {
-          return (
-            <AnimateSharedLayout type="crossfade" key={project}>
-              <Card
-                onClick={() => handleClick(assets[project].title)}
-                content={assets[project]}
-                key={project + index}
-                tabIndex={tab}
-              />
-              {modal === assets[project].title ? (
-                <CardModal
-                  layout={{ pic: "pic", body: "body", title: "title" }}
-                  exit={handleExit}
-                  key={project + "modal" + index}
-                  content={assets[project]}
-                  openSlide={openSlide}
-                />
-              ) : null}
-            </AnimateSharedLayout>
-          )
-        })}
-        {isOpen && (
-          <Lightbox
-            mainSrc={images[photoIndex]}
-            nextSrc={images[(photoIndex + 1) % images.length]}
-            prevSrc={images[(photoIndex + images.length - 1) % images.length]}
-            onCloseRequest={() => setOpen(false)}
-            onMovePrevRequest={() =>
-              setIndex((photoIndex + images.length - 1) % images.length)
+    <SBody>
+      <AnimateSharedLayout type="crossfade">
+        <SHeader id="works">Some Things I've Done </SHeader>
+        <SHighlights>
+          {Object.keys(assets.highlights).map((project, index) => {
+            const layoutId = {
+              pic: `${project}pic`,
+              body: `${project}body`,
+              title: `${project}title`,
             }
-            onMoveNextRequest={() => setIndex((photoIndex + 1) % images.length)}
-          />
-        )}
-      </SCards>
+            return (
+              <HighLightedWork
+                openGallery={() => openGallery(project)}
+                index={index}
+                content={assets.highlights[project]}
+                layoutId={layoutId}
+                handleClick={() =>
+                  handleClick(project, assets.highlights[project], false)
+                }
+              />
+            )
+          })}
+        </SHighlights>
+
+        <SHeader>Other Things I've Done</SHeader>
+        <SCards>
+          {Object.keys(assets.others).map((project) => {
+            const layoutId = {
+              pic: `${project}pic`,
+              body: `${project}body`,
+              title: `${project}title`,
+            }
+            return (
+              <Card
+                onClick={() =>
+                  handleClick(project, assets.others[project], true)
+                }
+                openSlide={() => openSlide(project)}
+                content={assets.others[project]}
+                key={project + "card"}
+                layoutId={layoutId}
+              />
+            )
+          })}
+
+          <AnimatePresence>
+            {modal && (
+              <CardModal
+                layout={{
+                  pic: `${selProject}pic`,
+                  body: `${selProject}body`,
+                  title: `${selProject}title`,
+                }}
+                key={selProject + "modal"}
+                exit={handleExit}
+                content={content}
+                openSlide={openSlide}
+                iconLayout={iconLayout}
+              />
+            )}
+          </AnimatePresence>
+
+          {isOpen && (
+            <Lightbox
+              mainSrc={images[photoIndex]}
+              nextSrc={images[(photoIndex + 1) % images.length]}
+              prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+              onCloseRequest={() => setOpen(false)}
+              onMovePrevRequest={() =>
+                setIndex((photoIndex + images.length - 1) % images.length)
+              }
+              onMoveNextRequest={() =>
+                setIndex((photoIndex + 1) % images.length)
+              }
+            />
+          )}
+        </SCards>
+      </AnimateSharedLayout>
     </SBody>
   )
 }

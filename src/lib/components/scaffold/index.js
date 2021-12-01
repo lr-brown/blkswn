@@ -5,14 +5,11 @@ const SScaffold = styled.main`
   display: flex;
   overflow-y: hidden;
   flex-direction: row;
-  width: 100%;
-  align-items: center;
-  max-height: 100vh;
-
+  width: 100vw;
+  height: 100vh;
   @media screen and (max-width: 1023px) {
     flex-direction: column;
   }
-
   @media screen and (min-width: 1700px) {
     width: 1700px;
     align-items: center;
@@ -21,20 +18,22 @@ const SScaffold = styled.main`
   }
 `
 const SBody = styled.div`
-  display: flex;
-  height: 100vh;
-  width: 100%;
+  display: grid;
+  grid-template-rows: 100vh;
   overflow-y: auto;
+  width: 100%;
+  height: 100vh;
+  padding-bottom: 100px;
   @media (max-width: 1023px) {
-    height: 90vh;
+    grid-template-rows: 100fr;
   }
 `
 
-const Scaffold = ({ sidebar, body, menu }) => {
+const Scaffold = ({ sidebar, body }) => {
   return (
     <SScaffold>
       {sidebar}
-      <SBody menu={menu}>{body}</SBody>
+      <SBody>{body}</SBody>
     </SScaffold>
   )
 }

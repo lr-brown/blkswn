@@ -1,12 +1,15 @@
 import { createGlobalStyle, css } from "styled-components"
+import pattern from "./images/stardust.png"
 
 const Dark = css`
   :root {
     --backgroundColor: #171d26;
     --primaryTextColor: #ffffff;
     --icons: #ffffff;
-    --buttons: #b797cc;
-    --buttonsAlt: #3e0a48;
+    --primaryColor: #b797cc;
+    --primaryColorTint: rgba(183, 151, 204, 0.2);
+    --secondaryColorTint: rgba(62, 10, 72, 0.2);
+    --secondaryColor: #3e0a48;
   }
 `
 
@@ -18,11 +21,13 @@ body {
     padding: 0px;
     margin: 0px;
     font-family:'Roboto', sans-serif;
-    background: var(--backgroundColor);
+    background-color: var(--backgroundColor);
+    background-image: url(${pattern});
     line-height: normal;
     color:var(--primaryTextColor);
-    
   }
+
+  
 button{
   background: none;
   cursor: pointer;
@@ -59,8 +64,22 @@ button{
     * { 
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
-    box-sizing: border-box; 
-}
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    ::-webkit-scrollbar {
+      width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: none; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          rgba(118, 77, 144, 1) 0%,
+          rgba(183, 151, 204, 1) 100%
+          );
+        border-radius: 4px;        
+      }
+    }
 }
 
 `

@@ -1,5 +1,4 @@
 import React from "react"
-import { useHistory, useLocation } from "react-router-dom"
 import * as SVG from "../../../icons"
 import {
   SSideBar,
@@ -9,80 +8,92 @@ import {
   SSvg,
   STab,
   STabIcon,
-  STabText,
   STabBody,
+  SIcons,
+  SIconsRow,
+  STabText,
 } from "./style"
 
-const Tab = ({ onCLick, icon, label }) => {
+const Tab = ({ icon, href, label }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        flex: "1",
+    <STab
+      href={href}
+      id={href}
+      whileHover={{
+        scale: 1.04,
+        transition: { duration: 0.1 },
+        fill: "var(--secondaryColor)",
       }}
     >
-      <STab
-        id={label}
-        onClick={onCLick}
-        whileHover={{
-          scale: 1.05,
-          transition: { duration: 0.05 },
-        }}
-        whileFocus={{
-          scale: 1.05,
-          transition: { duration: 0.05 },
-        }}
-      >
-        <SVG.Squircle size={"100%"} />
-        <STabBody>
-          <STabIcon>{SVG.getTabIcon(icon, "3.5vw")}</STabIcon>
-        </STabBody>
-      </STab>
-      <STabText>{label}</STabText>
-    </div>
+      <SVG.Squircle size={"100%"} />
+      <STabBody>
+        <STabIcon>{SVG.getTabIcon(icon, "3.5vw")}</STabIcon>
+        <STabText> {label}</STabText>
+      </STabBody>
+    </STab>
   )
 }
 
 const DestopSideBar = ({ logo }) => {
-  const history = useHistory()
-  const location = useLocation()
+  const iconHover = {
+    scale: 1.1,
+    borderColor: "var(--secondaryColor)",
+  }
   return (
     <SSideBar>
       <SHeading>
-        <SLogo src={logo} alt="Logo" onClick={() => history.push("/")} />
-        <STitle>
-          {" "}
-          Logan Brown
-          <br /> Developer{" "}
-        </STitle>
+        <SLogo src={logo} alt="Logo" />
+        <STitle>Logan Brown</STitle>
+        <STitle> Developer </STitle>
+        <SIconsRow>
+          <SIcons
+            whileHover={iconHover}
+            href={"https://github.com/Lr-Brown"}
+            target="_blank"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              y: { type: "spring", stiffness: 100 },
+              default: { duration: 0.2 },
+            }}
+          >
+            <SVG.GitHub size="85%" />
+          </SIcons>
+          <SIcons
+            href={"https://www.linkedin.com/in/lrbrown-1"}
+            target="_blank"
+            whileHover={iconHover}
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              y: { type: "spring", stiffness: 100, delay: 0.25 },
+              default: { duration: 0.2 },
+            }}
+          >
+            <SVG.Linkedin size="85%" />
+          </SIcons>
+          <SIcons
+            href={"mailto:lrbrown@wesleyan.edu?subject=[From%20Portfolio]"}
+            target="_blank"
+            whileHover={iconHover}
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              y: { type: "spring", stiffness: 100, delay: 0.5 },
+              default: { duration: 0.2 },
+            }}
+          >
+            <SVG.Email size="85%" />
+          </SIcons>
+        </SIconsRow>
       </SHeading>
       <SSvg>
+        <Tab icon="home" href="#home" label="About Me" />
+        <Tab icon="portfolio" href="#works" label="My Work" />
         <Tab
-          onCLick={() => history.push("/", { prevPath: location.pathname })}
-          icon="home"
-          label="Home"
-          index={1}
-        />
-        <Tab
-          onCLick={() =>
-            history.push("/works", { prevPath: location.pathname })
-          }
-          icon="portfolio"
-          label="My Work"
-          index={2}
-        />
-        <Tab
-          onCLick={() =>
-            window.open(
-              "https://docs.google.com/document/d/1xKqSKlgiYtP053rVNgCdgxbEzGZYJPxt5aoCfMOM0Lc/export?format=pdf",
-              "_blank"
-            )
-          }
+          href="https://docs.google.com/document/d/1xKqSKlgiYtP053rVNgCdgxbEzGZYJPxt5aoCfMOM0Lc/export?format=pdf"
           icon="resume"
-          label="My Resume"
-          index={3}
+          label="Resume"
         />
       </SSvg>
     </SSideBar>

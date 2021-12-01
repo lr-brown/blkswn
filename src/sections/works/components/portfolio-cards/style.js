@@ -5,21 +5,24 @@ export const SCard = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  aspect-ratio: 1/1.25;
-  margin: 12px 8px;
-  height: 350px;
-  padding: 16px;
-  border-radius: 16px;
-  background-color: var(--buttons);
+  justify-content: space-evenly;
+  justify-self: center;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+  background: linear-gradient(
+    315deg,
+    rgba(183, 151, 204, 1) 0%,
+    rgba(118, 77, 144, 1) 100%
+  );
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-`
-
-export const SIcon = styled(motion.img)`
-  border-radius: 12px;
-  height: 40%;
-  display: flex;
-  object-fit: contain;
+  img {
+    border-radius: 12px;
+    object-fit: contain;
+    max-width: 80%;
+    height: 30%;
+  }
 `
 
 export const SHeader = styled(motion.div)`
@@ -28,15 +31,12 @@ export const SHeader = styled(motion.div)`
   text-align: center;
   font-weight: bold;
 `
-
-export const SButton = styled(motion.button)`
-  background-color: var(--buttonsAlt);
-  color: var(--primaryTextColor);
-  cursor: pointer;
-  padding: 12px 12px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  border: none;
+export const SButtonRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 `
 export const SLogos = styled.div`
   height: 10%;

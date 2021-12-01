@@ -1,101 +1,120 @@
 {
-  "OurCampus": {
-    "title": "OurCampus",
-    "logo": "https://i.ibb.co/M5CPysc/Our-Campus.png",
-    "screenshots": [
-      "https://i.ibb.co/5LrfYWk/Ourcampus-1.png",
-      "https://i.ibb.co/fqYrMr1/Ourcampus-2.png",
-      "https://i.ibb.co/gjwXMWn/Ourcampus-3.png",
-      "https://i.ibb.co/949q4dJ/Ourcampus-4.png",
-      "https://i.ibb.co/h22snp1/Ourcampus-5.png",
-      "https://i.ibb.co/gZt4VfD/Ourcampus-6.png"
-    ],
-    "icons": ["react", "flutter", "figma", "css"],
-    "description": {
-      "What?": "   I am a Lead Developer for OurCampus which is a mobile app that acts as Wesleyan's “Social Media” platform. We currently have professor ratings, dining menus and events on the app and are looking to expand. We have had approximately ⅓ of Wesleyan's campus engage with the app so it is very highly used among students.",
-      "When, Where, Who?": "   One afternoon, I was scrolling through Facebook and saw a post from Tyler Lederer-Plaskett ‘21. He was looking to recruit more people who were interested in being part of the OurCampus team. Before joining OurCampus, I was familiar with it as  a mobile app that allows students to rate and review  professors on campus. The current leaders had expressed interest in expanding the app with other features that would transform it into an all-campus resource for students.",
-      "Why?": "    After being abruptly  sent home midway through the second semester of my freshman year, I had a desire, like many, to feel connected with my campus despite being at home. \n   This experience,  while one of much trial and error, provided me with so many invaluable skills that I can apply to all of my future projects and endeavors. I learned how to use the concepts I cultivated in my Computer Science courses in a practical and impactful way through OurCampus. I also learned the value of working on a team for personal development and improving in  project management.",
-      "How?": "    I started out by watching a lot of  tutorials for Flutter, the framework we used to build the app. I also tried to familiarize myself with the codebase so that I could be ready to contribute starting in the fall. The app was previously developed in native code so we were first tasked with migrating  the app to the singular codebase of Flutter which I assisted with in a minimal role. \n    My first major project I did with the team was implementing menus for on-campus dining options. We realized that it was unnecessarily time consuming to find menus on Wesleyan’s website. So, we began working on this addition shortly after releasing the new Flutter app in the fall of 2020 (which also included a significant UI update from the previous app).\n    With this feature we also began to recruit people in order to expand the team. One of my main tasks was to provide new team members with resources they could use to learn Flutter. This job allowed me to refine my own skills in practical coding through providing resources and helpful examples that applied to our workflow. "
-    }
-  },
-  "Privacy Pioneer": {
-    "title": "Privacy Pioneer",
-    "logo": "https://i.ibb.co/Y3s55H3/privacypioneer.png",
-    "screenshots": [
-      "https://i.ibb.co/k6VPDxs/Privacy-Pioneer-1.png",
-      "https://i.ibb.co/dQHB1WK/Privacy-Pioneer-2.png",
-      "https://i.ibb.co/0Fbtcg8/Privacy-Pioneer-3.png",
-      "https://i.ibb.co/526ckbj/Privacy-Pioneer-4.png",
-      "https://i.ibb.co/jbQ5sZr/Privacy-Pioneer-5.png"
-    ],
-    "icons": ["react", "figma", "css"],
-    "description": {
-      "What?": "   I helped build a Firefox browser extension called Privacy Pioneer. The extension reports to the user privacy information that has been sent to companies through their web request. I primarily worked in the frontend of this project so a large point of focus for me was the usability and accessibility of the data the backend team collected.",
-      "When, Where, Who?": "   The project was done under a research team called privacy-tech-lab spearheaded by a Wesleyan Professor who does research into privacy software . I was invited to join the research team during the spring semester of my sophomore year after I expressed interest in joining the team the previous summer. The lab is based at Wesleyan and we do most of the work there with the ability to work remotely during the summers.",
-      "Why?": "    I had previously only worked in mobile development for OurCampus and I wanted to gather more experience on what other forms of software development looked like. I was also interested in learning more about the growing ecosystem of privacy technology. Finally, as with all of my projects, I was extremely enthusiastic about working with others and exploring the styles and approaches to coding and collaborating.",
-      "How?": "    Given that I started with the research team during my sophomore spring semester, I had very limited technical knowledge of software development. So, at first, I learned JavaScript and React in order to read and write in the code base of the then-named “Integrated Privacy Analysis.”  Given some of my prior experience with software development, I was able to draw connections between my previous work and the concepts I was trying to learn.\n    Over the summer, the expectations for me increased. While I didn’t feel the most prepared to take over a whole project,  I was learning while doing. I spent many hours doing trial and error and looking through stack overflow.  My main job was to resolve front-end issues as they appeared. Every week, we would have two meetings to discuss the progress we made and areas we needed help with. Overall the summer was a great opportunity to make mistakes and learn from them with the help of my experienced peers and research professor.\n    During my junior fall semester, we worked on applying the final touches to the layout of the software. We wanted to focus on creating a usable extension that would clearly convey the work we’d done before preparing to write a research paper"
-    }
-  },
-  "Skphotography": {
-    "title": "Skphotography",
-    "logo": "https://i.ibb.co/Snd9DtS/skphotography.png",
-    "screenshots": [],
-    "icons": ["figma", "react", "css"],
-    "description": {
-      "What?": "   I designed and created a website portfolio for my mother’s photography business called SKPhotography. I began with creating wireframes which are mockups of the website before starting to code it.  What I ended up creating and continue to develop is a responsive React Single Page Web App.",
-      "When, Where, Who?": "   Currently, this is a website that I develop on my own with constant feedback from my mom. I began working on this project during the summer before my junior year and continue to develop and improve it now. My mother’s photography business is based in Philly but I do work on the website both at school and at home",
+  "highlights": {
+    "OurCampus": {
+      "title": "OurCampus",
+      "logo": "https://i.ibb.co/M5CPysc/Our-Campus.png",
+      "cover": [
+        "https://i.ibb.co/5LrfYWk/Ourcampus-1.png",
+        "https://i.ibb.co/fqYrMr1/Ourcampus-2.png",
+        "https://i.ibb.co/gjwXMWn/Ourcampus-3.png"
+      ],
+      "screenshots": [
+        "https://i.ibb.co/949q4dJ/Ourcampus-4.png",
+        "https://i.ibb.co/h22snp1/Ourcampus-5.png",
+        "https://i.ibb.co/gZt4VfD/Ourcampus-6.png"
+      ],
+      "icons": ["react", "flutter", "figma", "css"],
+      "description": {
+        "What?": "   I am a Lead Developer for OurCampus which is a mobile app that acts as Wesleyan's “Social Media” platform. We currently have professor ratings, dining menus and events on the app and are looking to expand. We have had approximately ⅓ of Wesleyan's campus engage with the app so it is very highly used among students.",
+        "When, Where, Who?": "   One afternoon, I was scrolling through Facebook and saw a post from Tyler Lederer-Plaskett ‘21. He was looking to recruit more people who were interested in being part of the OurCampus team. Before joining OurCampus, I was familiar with it as  a mobile app that allows students to rate and review  professors on campus. The current leaders had expressed interest in expanding the app with other features that would transform it into an all-campus resource for students.",
+        "Why?": "    After being abruptly  sent home midway through the second semester of my freshman year, I had a desire, like many, to feel connected with my campus despite being at home. \n   This experience,  while one of much trial and error, provided me with so many invaluable skills that I can apply to all of my future projects and endeavors. I learned how to use the concepts I cultivated in my Computer Science courses in a practical and impactful way through OurCampus. I also learned the value of working on a team for personal development and improving in  project management.",
+        "How?": "    I started out by watching a lot of  tutorials for Flutter, the framework we used to build the app. I also tried to familiarize myself with the codebase so that I could be ready to contribute starting in the fall. The app was previously developed in native code so we were first tasked with migrating  the app to the singular codebase of Flutter which I assisted with in a minimal role. \n    My first major project I did with the team was implementing menus for on-campus dining options. We realized that it was unnecessarily time consuming to find menus on Wesleyan’s website. So, we began working on this addition shortly after releasing the new Flutter app in the fall of 2020 (which also included a significant UI update from the previous app).\n    With this feature we also began to recruit people in order to expand the team. One of my main tasks was to provide new team members with resources they could use to learn Flutter. This job allowed me to refine my own skills in practical coding through providing resources and helpful examples that applied to our workflow. "
+      },
+      "github": "",
+      "external": "http://ourcampus.us.com/"
+    },
+    "Privacy Pioneer": {
+      "title": "Privacy Pioneer",
+      "logo": "https://i.ibb.co/pbm1dD2/Privacy-Pioneer.png",
+      "cover": ["https://i.ibb.co/k6VPDxs/Privacy-Pioneer-1.png"],
+      "screenshots": [
+        "https://i.ibb.co/dQHB1WK/Privacy-Pioneer-2.png",
+        "https://i.ibb.co/0Fbtcg8/Privacy-Pioneer-3.png",
+        "https://i.ibb.co/526ckbj/Privacy-Pioneer-4.png",
+        "https://i.ibb.co/jbQ5sZr/Privacy-Pioneer-5.png"
+      ],
+      "icons": ["react", "figma", "css"],
+      "description": {
+        "What?": "   I helped build a Firefox browser extension called Privacy Pioneer. The extension reports to the user privacy information that has been sent to companies through their web request. I primarily worked in the frontend of this project so a large point of focus for me was the usability and accessibility of the data the backend team collected.",
+        "When, Where, Who?": "   The project was done under a research team called privacy-tech-lab spearheaded by a Wesleyan Professor who does research into privacy software . I was invited to join the research team during the spring semester of my sophomore year after I expressed interest in joining the team the previous summer. The lab is based at Wesleyan and we do most of the work there with the ability to work remotely during the summers.",
+        "Why?": "    I had previously only worked in mobile development for OurCampus and I wanted to gather more experience on what other forms of software development looked like. I was also interested in learning more about the growing ecosystem of privacy technology. Finally, as with all of my projects, I was extremely enthusiastic about working with others and exploring the styles and approaches to coding and collaborating.",
+        "How?": "    Given that I started with the research team during my sophomore spring semester, I had very limited technical knowledge of software development. So, at first, I learned JavaScript and React in order to read and write in the code base of the then-named “Integrated Privacy Analysis.”  Given some of my prior experience with software development, I was able to draw connections between my previous work and the concepts I was trying to learn.\n    Over the summer, the expectations for me increased. While I didn’t feel the most prepared to take over a whole project,  I was learning while doing. I spent many hours doing trial and error and looking through stack overflow.  My main job was to resolve front-end issues as they appeared. Every week, we would have two meetings to discuss the progress we made and areas we needed help with. Overall the summer was a great opportunity to make mistakes and learn from them with the help of my experienced peers and research professor.\n    During my junior fall semester, we worked on applying the final touches to the layout of the software. We wanted to focus on creating a usable extension that would clearly convey the work we’d done before preparing to write a research paper"
+      },
+      "github": "https://github.com/privacy-tech-lab/privacy-pioneer",
+      "external": "https://www.privacytechlab.org/"
+    },
+    "Skphotography": {
+      "title": "Skphotography",
+      "logo": "https://i.ibb.co/Snd9DtS/skphotography.png",
+      "cover": ["https://i.ibb.co/R6rwWNm/skp1.png"],
+      "screenshots": [],
+      "icons": ["figma", "react", "css"],
+      "description": {
+        "What?": "   I designed and created a website portfolio for my mother’s photography business called SKPhotography. I began with creating wireframes which are mockups of the website before starting to code it.  What I ended up creating and continue to develop is a responsive React Single Page Web App.",
+        "When, Where, Who?": "   Currently, this is a website that I develop on my own with constant feedback from my mom. I began working on this project during the summer before my junior year and continue to develop and improve it now. My mother’s photography business is based in Philly but I do work on the website both at school and at home",
 
-      "Why?": "    I noticed that my mother's original website that she designed using VistaPrint had many usability issues and didn’t get the point of the website across quickly enough. The issues ranged from awkward layouts to inappropriate font sizes mostly due to the limited capabilities of the software she used. After taking note of these issues I offered my novice services in Web Design. Not only did this present me with the opportunity to practice my coding skills but I also was able to explore the world of design and usability through a straightforward implementation case. While the website is not complete I look forward to hearing feedback from my mom and her clients in the future.",
-      "How?": "    I first used a program called Figma to create wireframes. Figma allowed me to visualize CSS (Cascading Style Sheets ) and HTML (HyperText Markup Language) concepts through interactive models. For example, I wanted to use flexbox layouts (one way of arranging and sizing items on a page) and Figma allows you to implement them using frames and a tool called “auto layout”. After seeing it used and applied to my Figma designs I can more easily implement it in my code by converting all the details and parameters into CSS and HTML.\n    While the mockups are not perfect models of the end product  I was able to use them to gauge my mother’s reactions to concepts and ideas before implementing them through code. This allowed for a very rapid design process with ample feedback from the customer (my mom).\n    I then implemented the website using a javascript library called React. I have found that using React makes the readability of my code significantly better with the use of components and states."
+        "Why?": "    I noticed that my mother's original website that she designed using VistaPrint had many usability issues and didn’t get the point of the website across quickly enough. The issues ranged from awkward layouts to inappropriate font sizes mostly due to the limited capabilities of the software she used. After taking note of these issues I offered my novice services in Web Design. Not only did this present me with the opportunity to practice my coding skills but I also was able to explore the world of design and usability through a straightforward implementation case. While the website is not complete I look forward to hearing feedback from my mom and her clients in the future.",
+        "How?": "    I first used a program called Figma to create wireframes. Figma allowed me to visualize CSS (Cascading Style Sheets ) and HTML (HyperText Markup Language) concepts through interactive models. For example, I wanted to use flexbox layouts (one way of arranging and sizing items on a page) and Figma allows you to implement them using frames and a tool called “auto layout”. After seeing it used and applied to my Figma designs I can more easily implement it in my code by converting all the details and parameters into CSS and HTML.\n    While the mockups are not perfect models of the end product  I was able to use them to gauge my mother’s reactions to concepts and ideas before implementing them through code. This allowed for a very rapid design process with ample feedback from the customer (my mom).\n    I then implemented the website using a javascript library called React. I have found that using React makes the readability of my code significantly better with the use of components and states."
+      },
+      "github": "https://github.com/Lr-Brown/skphotography",
+      "external": "https://sharonkatricephotography.com/"
     }
   },
-  "Software Engineering": {
-    "title": "Software Engineering",
-    "logo": "https://i.ibb.co/LxnH2QF/Comp333.png",
-    "screenshots": [
-      "https://i.ibb.co/m98BwsL/333-1.png",
-      "https://i.ibb.co/3r5MXkn/333-2.png",
-      "https://i.ibb.co/tJRgc0B/333-3.png",
-      "https://i.ibb.co/FhBGKRZ/333-4.png",
-      "https://i.ibb.co/cyds87Z/333-5.png",
-      "https://i.ibb.co/fXDtz7c/333-6.png",
-      "https://i.ibb.co/S6z7pcr/333-7.png"
-    ],
-    "icons": ["react", "figma", "django", "css", "html"],
-    "description": {
-      "What?": "   I was assigned a series of projects for my Software Engineering class. While they are far from perfect (or even usable) it was one of the first times I began to put learned  computer science concepts into a software engineering context. I was introduced to project management through git and Github;  basic backend concepts through Django, PHP and SQL; and  frontend development through React and React Native.",
-      "When, Where, Who?": "This was a course that I took the spring semester of my sophomore year at Wesleyan University. It was a course of approximately 40 students.",
-      "Why?": "    Prior to this class  there was no focus on practical skills and implementation of computer science concepts. We mainly worked on understanding recursion and how basic data structures worked. While we used code to understand these concepts it still lacked the real world application that us prospective software developers desired. The professor of the course structured the class with the intent of focusing on application and implementation. While we did have exams, many of the concepts we were assessed on are basic principles of Software engineering from a practical standpoint. This was a nice change of pace from the abstract world that the Computer Science major tended to stay in.",
-      "How?": "    We were given 4 projects which accounted for all the homework we were assigned for the course.  We started with building a landing page for a fake music rating app. The website was made in HTML and CSS. We had to summarize the purpose of the app and its main features.\n    We were then introduced to backend development through SQL, PHP and Django. We were asked to make a database for our fake music rating app which my partner and I named Music Rates. In previous classes, we were exposed to python and other programming languages as a tool to teach basic computer science concepts. The exposure to a popularly used Web framework such as Django provided a more holistic glance into the world of coding and software engineering. \n    The final two projects focused on front end development using React and React Native. I work a lot in front end development and  these projects served as great foundations for what ground up development looked like. When building from  the ground up, you have to begin to ask questions such as how will I host this software and what exactly is it going to look like. These questions were never considered important in assignments where the environment around the code is irrelevant and specific instructions were provided."
-    }
-  },
-  "BlkSwn": {
-    "title": "BlkSwn",
-    "logo": "https://i.ibb.co/7phBFrW/blkswn.png",
-    "screenshots": [],
-    "icons": ["react", "figma", "css"],
-    "description": {
-      "What?": "   'Blkswn' is my personal portfolio website I made from scratch. The name came from one of my favorite albums by Smino. I thought that it would be fun to name my (untrademarked) projects after albums I really enjoy. The website stores and displays  all of my relevant work and projects. The website serves as a small representation of how I approach expression, conveying important content, and most importantly, accessibility.",
-      "When, Where, Who?": "   I decided to make my own website portfolio during my sophomore spring semester. I started working on the website while completing classes but did most of the work on the website over the summer before my junior year. I continue to work on it myself and ask my peers and colleagues for help on how I can improve it and better portray me.",
-      "Why?": "    I wanted to use the website to highlight my work to potential employers and other interested parties. I also wanted to use this as an opportunity to express myself through code which is something I try to do in all my projects but put special emphasis on this one.",
-      "How?": "I started out by asking a friend to help with the creation of the logo. She is a really talented designer and working with her to make a logo helped to  conceptualize the look and feel I wanted for my website and my brand as a developer. \n    Like all of my other projects I typically start by creating simple wireframes for the UI in Figma. I like to use websites like Dribble to get inspired and visualize usable designs for my mockups. Then I transitioned to React to build this website. I hoped to build on the experience I already had in Javascript and React.\n   I ran into many issues when translating what I did in figma into the website itself. I noticed that many aspects of my website looked weird  when changing the size of the window.  This led to a larger question of whether my website was sufficiently responsive. So, for a large portion of the development process, I played around with the many features of css and React to create a more responsive design.  While I am sure that my current solutions are far from perfect I am glad to have engaged so closely with issues such as these as I know it has made me into a better developer. \n    Finally I purchased the domain of lrbrown.dev and did research into hosting a simple static website and landed on Netlify for it’s simplicity and integration with Github."
-    }
-  },
-  "Enigma": {
-    "title": "Enigma",
-    "logo": "https://i.ibb.co/KXrq0rk/Enigma.png",
-    "screenshots": [
-      "https://i.ibb.co/TRZXbWj/Enigma-1.png",
-      "https://i.ibb.co/Pr1jg6X/Enigma-2.png",
-      "https://i.ibb.co/vL8qSd7/Enigma-3.png",
-      "https://i.ibb.co/zhBgST6/Enigma-4.png"
-    ],
-    "icons": ["unity"],
-    "description": {
-      "What?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at.",
-      "When, Where, Who?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at.",
-      "Why?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at.",
-      "How?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at."
+  "others": {
+    "Software Engineering": {
+      "title": "Software Engineering",
+      "logo": "https://i.ibb.co/LxnH2QF/Comp333.png",
+      "screenshots": [
+        "https://i.ibb.co/m98BwsL/333-1.png",
+        "https://i.ibb.co/3r5MXkn/333-2.png",
+        "https://i.ibb.co/tJRgc0B/333-3.png",
+        "https://i.ibb.co/FhBGKRZ/333-4.png",
+        "https://i.ibb.co/cyds87Z/333-5.png",
+        "https://i.ibb.co/fXDtz7c/333-6.png",
+        "https://i.ibb.co/S6z7pcr/333-7.png"
+      ],
+      "icons": ["react", "figma", "django", "css", "html"],
+      "description": {
+        "What?": "   I was assigned a series of projects for my Software Engineering class. While they are far from perfect (or even usable) it was one of the first times I began to put learned  computer science concepts into a software engineering context. I was introduced to project management through git and Github;  basic backend concepts through Django, PHP and SQL; and  frontend development through React and React Native.",
+        "When, Where, Who?": "This was a course that I took the spring semester of my sophomore year at Wesleyan University. It was a course of approximately 40 students.",
+        "Why?": "    Prior to this class  there was no focus on practical skills and implementation of computer science concepts. We mainly worked on understanding recursion and how basic data structures worked. While we used code to understand these concepts it still lacked the real world application that us prospective software developers desired. The professor of the course structured the class with the intent of focusing on application and implementation. While we did have exams, many of the concepts we were assessed on are basic principles of Software engineering from a practical standpoint. This was a nice change of pace from the abstract world that the Computer Science major tended to stay in.",
+        "How?": "    We were given 4 projects which accounted for all the homework we were assigned for the course.  We started with building a landing page for a fake music rating app. The website was made in HTML and CSS. We had to summarize the purpose of the app and its main features.\n    We were then introduced to backend development through SQL, PHP and Django. We were asked to make a database for our fake music rating app which my partner and I named Music Rates. In previous classes, we were exposed to python and other programming languages as a tool to teach basic computer science concepts. The exposure to a popularly used Web framework such as Django provided a more holistic glance into the world of coding and software engineering. \n    The final two projects focused on front end development using React and React Native. I work a lot in front end development and  these projects served as great foundations for what ground up development looked like. When building from  the ground up, you have to begin to ask questions such as how will I host this software and what exactly is it going to look like. These questions were never considered important in assignments where the environment around the code is irrelevant and specific instructions were provided."
+      },
+      "github": "",
+      "external": ""
+    },
+    "BlkSwn": {
+      "title": "BlkSwn",
+      "logo": "https://i.ibb.co/7phBFrW/blkswn.png",
+      "screenshots": [],
+      "icons": ["react", "figma", "css"],
+      "description": {
+        "What?": "   'Blkswn' is my personal portfolio website I made from scratch. The name came from one of my favorite albums by Smino. I thought that it would be fun to name my (untrademarked) projects after albums I really enjoy. The website stores and displays  all of my relevant work and projects. The website serves as a small representation of how I approach expression, conveying important content, and most importantly, accessibility.",
+        "When, Where, Who?": "   I decided to make my own website portfolio during my sophomore spring semester. I started working on the website while completing classes but did most of the work on the website over the summer before my junior year. I continue to work on it myself and ask my peers and colleagues for help on how I can improve it and better portray me.",
+        "Why?": "    I wanted to use the website to highlight my work to potential employers and other interested parties. I also wanted to use this as an opportunity to express myself through code which is something I try to do in all my projects but put special emphasis on this one.",
+        "How?": "I started out by asking a friend to help with the creation of the logo. She is a really talented designer and working with her to make a logo helped to  conceptualize the look and feel I wanted for my website and my brand as a developer. \n    Like all of my other projects I typically start by creating simple wireframes for the UI in Figma. I like to use websites like Dribble to get inspired and visualize usable designs for my mockups. Then I transitioned to React to build this website. I hoped to build on the experience I already had in Javascript and React.\n   I ran into many issues when translating what I did in figma into the website itself. I noticed that many aspects of my website looked weird  when changing the size of the window.  This led to a larger question of whether my website was sufficiently responsive. So, for a large portion of the development process, I played around with the many features of css and React to create a more responsive design.  While I am sure that my current solutions are far from perfect I am glad to have engaged so closely with issues such as these as I know it has made me into a better developer. \n    Finally I purchased the domain of lrbrown.dev and did research into hosting a simple static website and landed on Netlify for it’s simplicity and integration with Github."
+      },
+      "github": "https://github.com/Lr-Brown/blkswn",
+      "external": ""
+    },
+    "Enigma": {
+      "title": "Enigma",
+      "logo": "https://i.ibb.co/KXrq0rk/Enigma.png",
+      "screenshots": [
+        "https://i.ibb.co/TRZXbWj/Enigma-1.png",
+        "https://i.ibb.co/Pr1jg6X/Enigma-2.png",
+        "https://i.ibb.co/vL8qSd7/Enigma-3.png",
+        "https://i.ibb.co/zhBgST6/Enigma-4.png"
+      ],
+      "icons": ["unity"],
+      "description": {
+        "What?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at.",
+        "When, Where, Who?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at.",
+        "Why?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at.",
+        "How?": "It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at ease. The doctor said it would be less than a year. That gave him a year to live, something he'd failed to do with his daily drudgery of a routine that had passed as life until then.It was difficult to explain to them how the diagnosis of certain death had actually given him life. While everyone around him was in tears and upset, he actually felt more at."
+      },
+      "github": "https://github.com/Enigma-IDEA350/enigma",
+      "external": ""
     }
   }
 }

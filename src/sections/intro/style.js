@@ -1,18 +1,18 @@
-import { motion } from "framer-motion"
 import styled from "styled-components"
 
-export const SBody = styled(motion.div)`
+export const SBody = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 `
 
 export const SHello = styled.div`
   display: flex;
   align-self: center;
-  background-color: var(--buttons);
-  border-radius: 20px;
+  border: dotted 8px var(--primaryColor);
   padding: 16px;
   align-items: center;
   display: flex;
@@ -22,20 +22,20 @@ export const SHello = styled.div`
 `
 
 export const SPicture = styled.img`
-  width: 100%;
+  width: 80%;
+  border: dotted 8px var(--primaryColor);
   justify-self: center;
-  border-radius: 20px;
   display: flex;
-  object-fit: cover;
-  padding: 8px;
+  object-fit: contain;
+  padding: 16px;
 `
 
-export const STitle = styled.h2`
-  font-size: var(--title2);
+export const STitle = styled.div`
+  display: flex;
+  font-size: var(--title1);
   text-align: center;
-  align-self: center;
   font-weight: 600;
-  margin: 8px;
+  justify-content: center;
 `
 
 export const SContent = styled.div`
@@ -43,10 +43,9 @@ export const SContent = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 16px;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
-  height: 100%;
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1023px) {
     grid-template-columns: 1fr;
   }
 `
@@ -55,6 +54,8 @@ export const SText = styled.p`
   text-align: center;
   flex-direction: column;
   font-size: var(--body);
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 `
 export const SAboutMe = styled.section`
   display: flex;
