@@ -24,7 +24,7 @@ export const SHighlights = styled.div`
 export const SCards = styled.div`
   display: grid;
   grid-gap: 24px;
-  width: 90%;
+  width: 75%;
   grid-template-columns: repeat(3, 1fr);
   @media only screen and (max-width: 1023px) {
     grid-template-columns: 1fr;

@@ -8,7 +8,7 @@ export const SSideBar = styled.div`
   padding: 4px;
   position: sticky;
   border-radius: 20px;
-  max-width: 15vw;
+  max-width: 12vw;
   height: 100vh;
   font-size: var(--title2);
   flex-direction: column;
@@ -19,33 +19,31 @@ export const SSideBar = styled.div`
   }
 `
 export const SLogo = styled.img`
-  width: 50%;
-  max-height: 100%;
+  max-width: 65%;
+  max-height: 50%;
   display: flex;
   object-fit: contain;
   padding: 4px;
 `
 export const SHeading = styled.div`
   display: flex;
-  height: 25%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: 30%;
 `
 export const STitle = styled.h1`
-  font-size: 1.7vw;
+  font-size: 1.4vw;
   text-align: center;
   font-weight: 600;
   margin-block-start: 0em;
   margin-block-end: 0em;
 `
 export const SIconsRow = styled.div`
-  height: 30%;
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 4px;
+  margin-top: 8px;
 `
 export const SIcons = styled(motion.a)`
   path {
@@ -99,8 +97,53 @@ export const STabIcon = styled.div`
   justify-content: center;
 `
 export const STabText = styled.div`
-  font-size: 1vw;
+  font-size: 1.2vw;
   text-align: center;
-  font-weight: bold;
+  font-weight: 700;
   width: 100%;
+`
+
+export const SMobileTopBar = styled.div`
+  display: none;
+  background: var(--backgroundColor);
+  top: 0px;
+  position: sticky;
+  width: 100vw;
+  height: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (max-width: 1023px) {
+    display: flex;
+  }
+`
+export const SMobileSections = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 16px;
+`
+export const SMobileButton = styled.a`
+  border-radius: 8px;
+  font-size: var(--headline);
+  padding: 8px;
+  margin: 0px 4px;
+  background: var(--primaryGradient);
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+`
+
+export const SMobileLogo = styled.img`
+  width: 35%;
+  margin-left: 8px;
+  display: flex;
+  object-fit: contain;
+`
+export const SMobileImage = styled.div`
+  flex: 1;
+  display: flex;
+  padding: 8px;
+  justify-content: flex-start;
+  max-height: 100%;
 `

@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import Card from "./components/portfolio-cards"
-import CardModal from "./components/portfolio-full"
 import { AnimatePresence, AnimateSharedLayout } from "framer-motion"
 import { SBody, SCards, SHeader, SHighlights } from "./style"
 import Lightbox from "react-image-lightbox"
 import "react-image-lightbox/style.css"
-import assets from "../../lib/assets/assets.json"
+import assets from "../../lib/assets.json"
+import ReflectionModal from "./components/reflection-cards"
+import WorksCard from "./components/other-cards"
 import { HighLightedWork } from "./components/highlight"
 
 const WorksView = () => {
@@ -34,13 +34,11 @@ const WorksView = () => {
   }
 
   const handleClick = (title, content, iconLayout) => {
-    if (!modal && window.matchMedia("(min-width: 1023px)").matches) {
+    if (!modal) {
       setModal(true)
       setProject(title)
       setContent(content)
       setIcon(iconLayout)
-    } else {
-      openSlide(0, title)
     }
   }
   const handleExit = () => {
@@ -82,7 +80,7 @@ const WorksView = () => {
               title: `${project}title`,
             }
             return (
-              <Card
+              <WorksCard
                 onClick={() =>
                   handleClick(project, assets.others[project], true)
                 }
@@ -96,7 +94,7 @@ const WorksView = () => {
 
           <AnimatePresence>
             {modal && (
-              <CardModal
+              <ReflectionModal
                 layout={{
                   pic: `${selProject}pic`,
                   body: `${selProject}body`,

@@ -1,17 +1,23 @@
 import React from "react"
-import * as SVG from "../../../icons"
+import * as Icons from "../../icons/icons"
+import * as TabIcons from "../../icons/tabIcons"
 import {
   SSideBar,
   SHeading,
   SLogo,
   STitle,
+  SIcons,
   SSvg,
   STab,
   STabIcon,
   STabBody,
-  SIcons,
   SIconsRow,
   STabText,
+  SMobileSections,
+  SMobileLogo,
+  SMobileTopBar,
+  SMobileImage,
+  SMobileButton,
 } from "./style"
 
 const Tab = ({ icon, href, label }) => {
@@ -25,9 +31,9 @@ const Tab = ({ icon, href, label }) => {
         fill: "var(--secondaryColor)",
       }}
     >
-      <SVG.Squircle size={"100%"} />
+      <TabIcons.Squircle size={"100%"} />
       <STabBody>
-        <STabIcon>{SVG.getTabIcon(icon, "3.5vw")}</STabIcon>
+        <STabIcon>{TabIcons.getTabIcon(icon, "3.5vw")}</STabIcon>
         <STabText> {label}</STabText>
       </STabBody>
     </STab>
@@ -57,7 +63,7 @@ const DestopSideBar = ({ logo }) => {
               default: { duration: 0.2 },
             }}
           >
-            <SVG.GitHub size="85%" />
+            <Icons.GitHub size="85%" />
           </SIcons>
           <SIcons
             href={"https://www.linkedin.com/in/lrbrown-1"}
@@ -70,7 +76,7 @@ const DestopSideBar = ({ logo }) => {
               default: { duration: 0.2 },
             }}
           >
-            <SVG.Linkedin size="85%" />
+            <Icons.Linkedin size="85%" />
           </SIcons>
           <SIcons
             href={"mailto:lrbrown@wesleyan.edu?subject=[From%20Portfolio]"}
@@ -83,7 +89,7 @@ const DestopSideBar = ({ logo }) => {
               default: { duration: 0.2 },
             }}
           >
-            <SVG.Email size="85%" />
+            <Icons.Email size="85%" />
           </SIcons>
         </SIconsRow>
       </SHeading>
@@ -100,4 +106,27 @@ const DestopSideBar = ({ logo }) => {
   )
 }
 
-export default DestopSideBar
+const MobileAppBar = ({ logo }) => (
+  <SMobileTopBar>
+    <SMobileImage>
+      <SMobileLogo src={logo} />
+    </SMobileImage>
+    <SMobileSections>
+      <SMobileButton id="#home" href="#home">
+        Home
+      </SMobileButton>
+      <SMobileButton id="#works" href="#works">
+        Work
+      </SMobileButton>
+    </SMobileSections>
+  </SMobileTopBar>
+)
+
+const MenuBar = ({ logo }) => (
+  <>
+    <DestopSideBar logo={logo} />
+    <MobileAppBar logo={logo} />
+  </>
+)
+
+export default MenuBar

@@ -11,9 +11,9 @@ import {
   SQuestionButton,
   SQuestionRow,
 } from "./style"
-import * as SVG from "../../../../lib/icons"
+import * as Icons from "../../../../lib/icons/icons"
 
-const CardModal = ({ layout, exit, content, iconLayout }) => {
+const ReflectionModal = ({ layout, exit, content, iconLayout }) => {
   const [selQuestion, setQuestion] = useState("What?")
 
   const handleKeyDown = (event) => {
@@ -40,7 +40,7 @@ const CardModal = ({ layout, exit, content, iconLayout }) => {
           )}
           <SHeader layoutId={layout.title}>{content.title}</SHeader>
           <SCancel whileHover={{ scale: 1.2 }} onClick={exit}>
-            <SVG.Cross size="36px" />
+            <Icons.Cross size="36px" />
           </SCancel>
         </STop>
         <SQuestionRow>
@@ -75,4 +75,4 @@ const CardModal = ({ layout, exit, content, iconLayout }) => {
   )
 }
 
-export default CardModal
+export default ReflectionModal

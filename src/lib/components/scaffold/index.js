@@ -7,14 +7,9 @@ const SScaffold = styled.main`
   flex-direction: row;
   width: 100vw;
   height: 100vh;
+  align-items: center;
   @media screen and (max-width: 1023px) {
     flex-direction: column;
-  }
-  @media screen and (min-width: 1700px) {
-    width: 1700px;
-    align-items: center;
-    justify-content: center;
-    justify-self: center;
   }
 `
 const SBody = styled.div`

@@ -10,9 +10,10 @@ import {
   SIconLink,
   SIcon,
 } from "./style"
-import * as SVG from "../../../../lib/icons"
-import { getLogo } from "../../../../lib/icons"
+import * as Icons from "../../../../lib/icons/icons"
+import { getLogo } from "../../../../lib/icons/logos"
 import Button from "../../../../lib/components/button"
+import { useRef, useState, useEffect } from "react"
 
 export const HighLightedWork = ({
   index,
@@ -21,15 +22,42 @@ export const HighLightedWork = ({
   layoutId,
   handleClick,
 }) => {
+  const useOnScreen = (ref) => {
+    const [isIntersecting, setIntersecting] = useState(false)
+    const observer = new IntersectionObserver(([entry]) =>
+      setIntersecting(entry.isIntersecting)
+    )
+    useEffect(() => {
+      observer.observe(ref.current)
+      // Remove the observer as soon as the component is unmounted
+      return () => {
+        observer.disconnect()
+      }
+    })
+    return isIntersecting
+  }
+
+  const Ref = useRef()
+
   return (
-    <SBody>
+    <SBody ref={Ref}>
       <SContent>
-        <SImage index={index}>
+        <SImage
+          index={index}
+          initial={{ x: index % 2 === 0 ? "50%" : "-50%", opacity: 0 }}
+          animate={useOnScreen(Ref) ? { x: 0, opacity: 1 } : {}}
+          transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
+        >
           {content.cover.map((src) => (
             <img index={index} src={src} alt={content.title + " cover"} />
           ))}
         </SImage>
-        <SInfo index={index}>
+        <SInfo
+          index={index}
+          initial={{ x: index % 2 === 0 ? "-50%" : "50%", opacity: 0 }}
+          animate={useOnScreen(Ref) ? { x: 0, opacity: 1 } : {}}
+          transition={{ type: "tween", ease: "easeIn", duration: 0.5 }}
+        >
           <STitle layoutId={layoutId.title}>{content.title}</STitle>
           <SDescription index={index} layoutId={layoutId.body}>
             {content.description["What?"]}
@@ -40,12 +68,14 @@ export const HighLightedWork = ({
             </SButtonRow>
           </SDescription>
           <SButtonRow index={index}>
-            <Button
-              handleClick={handleClick}
-              text={"What I've learned"}
-              color={"var(--primaryColor)"}
-              margin="8px"
-            />
+            {window.matchMedia("(min-width: 1024px)").matches && (
+              <Button
+                handleClick={handleClick}
+                text={"What I've learned"}
+                color={"var(--primaryColor)"}
+                margin="8px"
+              />
+            )}
             <Button
               handleClick={openGallery}
               text={"Gallery"}
@@ -58,7 +88,7 @@ export const HighLightedWork = ({
                 target="_blank"
                 whileHover={{ scale: 1.1 }}
               >
-                <SVG.GitHub size="32px" />
+                <Icons.GitHub size="32px" />
               </SIconLink>
             )}
             {content.external && (
@@ -67,7 +97,7 @@ export const HighLightedWork = ({
                 target="_blank"
                 whileHover={{ scale: 1.1 }}
               >
-                <SVG.External size="32px" />
+                <Icons.External size="32px" />
               </SIconLink>
             )}
           </SButtonRow>

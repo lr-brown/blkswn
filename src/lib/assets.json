@@ -1,4 +1,26 @@
 {
+  "albums": [
+    {
+      "cover": "https://upload.wikimedia.org/wikipedia/en/0/0c/Ari_SBB.jpg",
+      "link": "https://open.spotify.com/embed/album/3hejjJbFsinMBc1KBqF71w?utm_source=generator"
+    },
+    {
+      "cover": "https://upload.wikimedia.org/wikipedia/en/6/61/Blkswn.JPG",
+      "link": "https://open.spotify.com/embed/album/3bTjPEgPzm1XwXsNlMVHhs?utm_source=generator"
+    },
+    {
+      "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Chilombo_Deluxe_-_Jhen%C3%A9_Aiko.jpg/220px-Chilombo_Deluxe_-_Jhen%C3%A9_Aiko.jpg",
+      "link": "https://open.spotify.com/embed/album/5jlE1zlhT3mEWw0mRpN920?utm_source=generator"
+    },
+    {
+      "cover": "https://upload.wikimedia.org/wikipedia/en/5/55/LaurynHillTheMiseducationofLaurynHillalbumcover.jpg",
+      "link": "https://open.spotify.com/embed/album/1BZoqf8Zje5nGdwZhOjAtD?utm_source=generator"
+    },
+    {
+      "cover": "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",
+      "link": "https://open.spotify.com/embed/album/7ycBtnsMtyVbbwTfJwRjSP?utm_source=generator"
+    }
+  ],
   "highlights": {
     "OurCampus": {
       "title": "OurCampus",

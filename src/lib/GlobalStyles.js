@@ -1,5 +1,4 @@
 import { createGlobalStyle, css } from "styled-components"
-import pattern from "./images/stardust.png"
 
 const Dark = css`
   :root {
@@ -10,6 +9,10 @@ const Dark = css`
     --primaryColorTint: rgba(183, 151, 204, 0.2);
     --secondaryColorTint: rgba(62, 10, 72, 0.2);
     --secondaryColor: #3e0a48;
+    --primaryGradient: linear-gradient(
+      rgba(183, 151, 204, 1) 0%,
+      rgba(118, 77, 144, 1) 100%
+    );
   }
 `
 
@@ -22,7 +25,7 @@ body {
     margin: 0px;
     font-family:'Roboto', sans-serif;
     background-color: var(--backgroundColor);
-    background-image: url(${pattern});
+    background-image: url("/images/stardust.png");
     line-height: normal;
     color:var(--primaryTextColor);
   }

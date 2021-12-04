@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export const SBody = styled.div`
   display: flex;
-  /* height: 45vh; */
+  min-height: 45vh;
   width: 80%;
   padding: 16px;
   background-color: var(--secondaryColorTint);
@@ -16,8 +16,9 @@ export const SContent = styled.div`
   grid-template-rows: 1fr;
   display: grid;
   width: 100%;
+  overflow-x: hidden;
 `
-export const SInfo = styled.div`
+export const SInfo = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -61,21 +62,19 @@ export const SImage = styled(motion.div)`
     display: none;
   }
 `
-export const SDescription = styled(motion.div)`
+export const SDescription = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
   height: fit-content;
   align-items: ${(props) => (props.index % 2 === 0 ? "start" : "end")};
-  padding: 16px;
+  text-align: ${(props) => (props.index % 2 === 0 ? "start" : "end")};
   border-radius: 4px;
   margin-bottom: 8px;
-  background: linear-gradient(
-    ${(props) => (props.index % 2 === 0 ? "315deg" : "45deg")},
-    rgba(183, 151, 204, 1) 0%,
-    rgba(118, 77, 144, 1) 100%
-  );
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  background: (--primaryGradient);
+  @media only screen and (max-width: 1023px) {
+    align-items: center;
+  }
 `
 
 export const SButtonRow = styled.div`

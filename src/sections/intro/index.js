@@ -1,7 +1,25 @@
-import React from "react"
-import { SPicture, SText, SBody, STitle, SContent, SAboutMe } from "./style"
-import Logan from "../../lib/images/logan.jpeg"
+import React, { useState } from "react"
+import {
+  SPicture,
+  SText,
+  SBody,
+  STitle,
+  SContent,
+  SAboutMe,
+  SOther,
+  SAlbum,
+  SMusic,
+  SMedia,
+  SMediaControls,
+  SMuscicSection,
+  SPraise,
+} from "./style"
+import { motion, AnimatePresence } from "framer-motion"
+import * as Icons from "../../lib/icons/icons"
+import * as Assets from "../../lib/assets.json"
 const IntroView = () => {
+  const [index, setIndex] = useState(0)
+
   return (
     <SBody id="home">
       <SContent>
@@ -32,16 +50,63 @@ const IntroView = () => {
             passion evolved into wanting to become a Software Engineer.
           </SText>
           <br />
-          <SText>
+          {/* <SText>
             In most of my projects I work in the front end. When I’m coding, I
             enjoy listening to R&B, Rap, and Jazz music. Some notable artists
             include: Smino, Ari Lennox, and Jhené Aiko. I hope you take the time
             to explore all of my projects, reflections and experience. I love
             helping others enact their passions through code and I look forward
             to working with you!
-          </SText>
+          </SText> */}
+          <SOther>
+            <SMuscicSection>
+              <h1>Some music I like</h1>
+              <SMusic>
+                <SMedia />
+                <AnimatePresence initial={false}>
+                  <SAlbum
+                    href={Assets.albums[index].link}
+                    key={Assets["albums"][index].cover}
+                    target="_blank"
+                    cover={Assets["albums"][index].cover}
+                    whileHover={{ scale: 1.1, borderRadius: "8px" }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: "100%", opacity: 0 }}
+                    initial={{ x: "-100%", opacity: 0 }}
+                  />
+                </AnimatePresence>
+                <SMediaControls>
+                  <motion.button
+                    whileHover={{ x: -5, scale: 1.1 }}
+                    onClick={() => {
+                      setIndex(index > 0 ? index - 1 : Assets.albums.length - 1)
+                    }}
+                  >
+                    <Icons.Previous size={"32px"} />
+                  </motion.button>
+
+                  <motion.button
+                    whileHover={{ x: 5, scale: 1.1 }}
+                    onClick={() => {
+                      setIndex((index + 1) % Assets.albums.length)
+                    }}
+                  >
+                    <Icons.Next size={"32px"} />
+                  </motion.button>
+                </SMediaControls>
+              </SMusic>
+            </SMuscicSection>
+            <SPraise
+              whileHover={{ scale: 1.05 }}
+              href={"recs.pdf"}
+              target="_blank"
+            >
+              <h1> Nice things my bosses have said about me</h1>
+              <Icons.MegaPhone size="52px" />
+            </SPraise>
+          </SOther>
         </SAboutMe>
-        <SPicture src={Logan} alt={"A photo of Logan"} />
+        <SPicture src={"/images/logan.jpeg"} alt={"A photo of Logan"} />
       </SContent>
     </SBody>
   )

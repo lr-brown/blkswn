@@ -10,7 +10,6 @@ export const SCard = styled(motion.div)`
   max-width: 500px;
   width: 100%;
   border-radius: 8px;
-  aspect-ratio: 1/1;
   background: linear-gradient(
     315deg,
     rgba(183, 151, 204, 1) 0%,

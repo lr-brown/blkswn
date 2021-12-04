@@ -83,6 +83,7 @@ export const SDescription = styled(motion.div)`
   padding: 16px;
   p {
     font-size: var(--body);
+    line-height: normal;
   }
   flex-direction: column;
   overflow-y: hidden;
