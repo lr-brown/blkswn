@@ -68,14 +68,13 @@ export const HighLightedWork = ({
             </SButtonRow>
           </SDescription>
           <SButtonRow index={index}>
-            {window.matchMedia("(min-width: 1024px)").matches && (
-              <Button
-                handleClick={handleClick}
-                text={"What I've learned"}
-                color={"var(--primaryColor)"}
-                margin="8px"
-              />
-            )}
+            <Button
+              handleClick={handleClick}
+              text={"All the details!"}
+              color={"var(--primaryColor)"}
+              margin="8px"
+            />
+
             <Button
               handleClick={openGallery}
               text={"Gallery"}

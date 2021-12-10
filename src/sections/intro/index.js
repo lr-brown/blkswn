@@ -26,18 +26,39 @@ const IntroView = () => {
         <SAboutMe>
           <STitle>Introduction</STitle>
           <SText>
-            I am a Junior at Wesleyan University studying Computer Science and
-            Integrated Design Engineering and Applied Science. I attended
-            boarding school for high school so I consider myself a very
-            independent person. My favorite color is green but I also really
-            enjoy looking at the colors I’ve decorated this website in. Some of
-            my hobbies include playing video games, integrating smart home
-            devices, and binge-watching tv shows (I’m embarrassingly really good
-            at it). I am a middle child which naturally means that I am the most
-            responsible, self-driven and forgotten. I have three dogs (Tucker,
-            Diesel, and Sadie) and two tortoises (Skyy and Max).
+            I am a Junior at{" "}
+            <a
+              href="https://www.wesleyan.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wesleyan University
+            </a>{" "}
+            studying{" "}
+            <a
+              href="https://www.wesleyan.edu/mathcs/cs/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Computer Science{" "}
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.wesleyan.edu/ideas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Integrated Design Engineering and Applied Science
+            </a>
+            . I attended boarding school for high school so I consider myself a
+            very independent person. My favorite color at the moment is green.
+            Some of my hobbies include playing video games, integrating smart
+            home devices, and binge-watching tv shows (I’m embarrassingly really
+            good at it). I am a middle child which naturally means that I am the
+            most responsible, self-driven and forgotten (and humble). I have
+            three dogs (Tucker, Diesel, and Sadie) and two tortoises (Skyy and
+            Max).
           </SText>
-          <br />
           <SText>
             I’ve always known that I wanted to do something relating to creating
             and developing. In my early adolescence, I had set my sights on
@@ -49,15 +70,11 @@ const IntroView = () => {
             loved programming. Soon, my aspirations quickly shifted and my
             passion evolved into wanting to become a Software Engineer.
           </SText>
-          <br />
-          {/* <SText>
-            In most of my projects I work in the front end. When I’m coding, I
-            enjoy listening to R&B, Rap, and Jazz music. Some notable artists
-            include: Smino, Ari Lennox, and Jhené Aiko. I hope you take the time
-            to explore all of my projects, reflections and experience. I love
-            helping others enact their passions through code and I look forward
-            to working with you!
-          </SText> */}
+          <SText>
+            Everyday I learn more about developing and fall more in love with
+            it. I look helping others enact their passions through code and I
+            look forward to working with you!
+          </SText>
           <SOther>
             <SMuscicSection>
               <h1>Some music I like</h1>
@@ -96,14 +113,24 @@ const IntroView = () => {
                 </SMediaControls>
               </SMusic>
             </SMuscicSection>
-            <SPraise
-              whileHover={{ scale: 1.05 }}
-              href={"recs.pdf"}
-              target="_blank"
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+                justifyContent: "space-between",
+              }}
             >
-              <h1> Nice things my bosses have said about me</h1>
-              <Icons.MegaPhone size="52px" />
-            </SPraise>
+              <h2> Nice things my bosses have said about me</h2>
+              <SPraise
+                whileHover={{ scale: 1.05 }}
+                href={"recs.pdf"}
+                target="_blank"
+              >
+                <Icons.MegaPhone size="52px" />
+              </SPraise>
+            </div>
           </SOther>
         </SAboutMe>
         <SPicture src={"/images/logan.jpeg"} alt={"A photo of Logan"} />

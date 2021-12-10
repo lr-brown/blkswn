@@ -13,7 +13,7 @@ const WorksCard = ({ content, onClick, layoutId, openSlide }) => {
         {window.matchMedia("(min-width: 1024px)").matches && (
           <Button
             handleClick={onClick}
-            text={"What I've Learned"}
+            text={"All the details"}
             color={"var(--secondaryColor)"}
           />
         )}

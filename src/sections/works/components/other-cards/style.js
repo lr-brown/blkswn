@@ -10,6 +10,7 @@ export const SCard = styled(motion.div)`
   max-width: 500px;
   width: 100%;
   border-radius: 8px;
+  padding: 16px;
   background: linear-gradient(
     315deg,
     rgba(183, 151, 204, 1) 0%,
@@ -17,7 +18,6 @@ export const SCard = styled(motion.div)`
   );
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   img {
-    border-radius: 12px;
     object-fit: contain;
     max-width: 80%;
     height: 30%;

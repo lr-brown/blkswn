@@ -29,14 +29,19 @@ export const SPicture = styled.img`
   display: flex;
   object-fit: contain;
   padding: 16px;
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 50px;
+  }
 `
 
-export const STitle = styled.div`
+export const STitle = styled.h1`
   display: flex;
   font-size: var(--title1);
   text-align: center;
   font-weight: 600;
   justify-content: center;
+  margin-block-start: 0em;
+  margin-block-end: 0.2em;
 `
 
 export const SContent = styled.div`
@@ -51,12 +56,17 @@ export const SContent = styled.div`
   }
 `
 export const SText = styled.p`
-  display: flex;
+  display: inline;
   text-align: center;
   flex-direction: column;
   font-size: var(--body);
   margin-block-start: 0em;
-  margin-block-end: 0em;
+  margin-block-end: 0.5em;
+  font-weight: 500;
+  line-height: 1.4;
+  a {
+    color: var(--primaryColor);
+  }
 `
 export const SAboutMe = styled.section`
   display: flex;
@@ -69,7 +79,6 @@ export const SOther = styled.span`
   grid-template-columns: repeat(2, 1fr);
   padding: 8px;
   justify-items: center;
-  width: 100%;
   @media only screen and (max-width: 1023px) {
     grid-template-columns: 1fr;
   }
@@ -86,7 +95,7 @@ export const SMuscicSection = styled.div`
   }
   @media only screen and (max-width: 1023px) {
     width: 100%;
-    margin: 16px 0px;
+    margin-bottom: 50px;
   }
 `
 export const SMusic = styled.div`
@@ -141,23 +150,18 @@ export const SMediaControls = styled.div`
 
 export const SPraise = styled(motion.a)`
   display: flex;
-  text-decoration: none;
   border-radius: 50%;
-  aspect-ratio: 1/1;
-  width: 75%;
-  flex-direction: column;
-  justify-content: space-evenly;
   background: var(--primaryGradient);
-  align-items: center;
+  padding: 16px;
+  height: 100%;
   justify-content: center;
-  margin: 0px 8px;
-  padding: 8px;
-  color: var(--primaryTextColor);
-  h1 {
-    font-size: var(--headline);
-    text-align: center;
-  }
+  align-items: center;
+  aspect-ratio: 1/1;
+  width: fit-content;
   path {
     fill: var(--icons);
+  }
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 50px;
   }
 `

@@ -20,6 +20,11 @@ export const SCard = styled(motion.div)`
   );
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   align-items: center;
+  @media only screen and (max-width: 1023px) {
+    width: 75vw;
+    max-height: 90vh;
+    align-items: center;
+  }
 `
 export const SContent = styled(motion.div)`
   display: flex;
@@ -43,15 +48,16 @@ export const SQuestionButton = styled(motion.button)`
   font-size: var(--body);
   color: white;
   margin: 8px;
+  height: 100%;
 `
 
 export const SBody = styled(motion.div)`
   flex-direction: row;
-  margin-top: 16px;
   display: flex;
   width: 100%;
   height: 90%;
   justify-content: space-evenly;
+  overflow-y: auto;
 `
 
 export const SIcon = styled(motion.img)`
@@ -59,6 +65,9 @@ export const SIcon = styled(motion.img)`
   display: flex;
   height: 100%;
   object-fit: contain;
+  @media only screen and (max-width: 1023px) {
+    height: 10vw;
+  }
 `
 
 export const SButton = styled(motion.div)`
@@ -75,19 +84,20 @@ export const SHeader = styled(motion.div)`
   font-size: var(--title1);
   display: flex;
   font-weight: bolder;
+  @media only screen and (max-width: 1023px) {
+    font-size: 5vw;
+  }
 `
 export const SDescription = styled(motion.div)`
-  justify-content: center;
   width: 100%;
   display: flex;
-  padding: 16px;
   p {
     font-size: var(--body);
     line-height: normal;
+    white-space: pre-wrap;
   }
   flex-direction: column;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-y: auto;
 `
 
 export const SOverlay = styled(motion.div)`

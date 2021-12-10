@@ -69,6 +69,7 @@ button{
     -webkit-box-sizing: border-box; 
     box-sizing: border-box;
     scroll-behavior: smooth;
+    @media only screen and (min-width: 1024px) {
     ::-webkit-scrollbar {
       width: 12px;
       }
@@ -82,6 +83,8 @@ button{
           );
         border-radius: 4px;        
       }
+  }
+    
     }
 }
 
