@@ -15,10 +15,13 @@ const WorksView = () => {
   const [isOpen, setOpen] = useState(false)
   const [photoIndex, setIndex] = useState(0)
   const [images, setImages] = useState([])
+  const [caption, setCaption] = useState("")
   const [iconLayout, setIcon] = useState(false)
 
   const openSlide = (title) => {
     setImages(assets["others"][title]["screenshots"])
+    setCaption(assets["others"][title]["alt"])
+
     setOpen(true)
     setIndex(0)
   }
@@ -29,6 +32,7 @@ const WorksView = () => {
         assets["highlights"][title]["screenshots"]
       )
     )
+    setCaption(assets["highlights"][title]["alt"])
     setOpen(true)
     setIndex(0)
   }
@@ -114,6 +118,7 @@ const WorksView = () => {
               mainSrc={images[photoIndex]}
               nextSrc={images[(photoIndex + 1) % images.length]}
               prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+              imageCaption={caption}
               onCloseRequest={() => setOpen(false)}
               onMovePrevRequest={() =>
                 setIndex((photoIndex + images.length - 1) % images.length)

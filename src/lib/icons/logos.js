@@ -2,7 +2,6 @@ import React from "react"
 
 export const ReactIcon = ({ size }) => (
   <svg
-    role="img"
     viewBox="0 0 24 24"
     width={size}
     height={size}
@@ -14,7 +13,6 @@ export const ReactIcon = ({ size }) => (
 
 export const Flutter = ({ size }) => (
   <svg
-    role="img"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -28,7 +26,6 @@ export const Flutter = ({ size }) => (
 
 export const Figma = ({ size }) => (
   <svg
-    role="img"
     width={size}
     height={size}
     viewBox="0 0 24 24"
@@ -42,7 +39,6 @@ export const Figma = ({ size }) => (
 
 export const Unity = ({ size }) => (
   <svg
-    role="img"
     viewBox="0 0 24 24"
     width={size}
     height={size}
@@ -56,7 +52,6 @@ export const Unity = ({ size }) => (
 
 export const HTML = ({ size }) => (
   <svg
-    role="img"
     width={size}
     height={size}
     viewBox="0 0 24 24"
@@ -70,7 +65,6 @@ export const HTML = ({ size }) => (
 
 export const Django = ({ size }) => (
   <svg
-    role="img"
     width={size}
     height={size}
     viewBox="0 0 24 24"
@@ -84,7 +78,6 @@ export const Django = ({ size }) => (
 
 export const CSS = ({ size }) => (
   <svg
-    role="img"
     viewBox="0 0 24 24"
     width={size}
     height={size}

@@ -24,7 +24,6 @@ const Tab = ({ icon, href, label }) => {
   return (
     <STab
       href={href}
-      id={href}
       whileHover={{
         scale: 1.04,
         transition: { duration: 0.1 },
@@ -48,7 +47,7 @@ const DestopSideBar = ({ logo }) => {
   return (
     <SSideBar>
       <SHeading>
-        <SLogo src={logo} alt="Logo" />
+        <SLogo src={logo} alt="My Logo!" />
         <STitle>Logan Brown</STitle>
         <STitle> Developer </STitle>
         <SIconsRow>
@@ -56,6 +55,7 @@ const DestopSideBar = ({ logo }) => {
             whileHover={iconHover}
             href={"https://github.com/Lr-Brown"}
             target="_blank"
+            aria-label="Github Link"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -68,6 +68,7 @@ const DestopSideBar = ({ logo }) => {
           <SIcons
             href={"https://www.linkedin.com/in/lrbrown-1"}
             target="_blank"
+            aria-label="Linkedin Link"
             whileHover={iconHover}
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -81,6 +82,7 @@ const DestopSideBar = ({ logo }) => {
           <SIcons
             href={"mailto:lrbrown@wesleyan.edu?subject=[From%20Portfolio]"}
             target="_blank"
+            aria-label="Email Link"
             whileHover={iconHover}
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -109,15 +111,11 @@ const DestopSideBar = ({ logo }) => {
 const MobileAppBar = ({ logo }) => (
   <SMobileTopBar>
     <SMobileImage>
-      <SMobileLogo src={logo} />
+      <SMobileLogo src={logo} alt="My Logo" />
     </SMobileImage>
     <SMobileSections>
-      <SMobileButton id="#home" href="#home">
-        Home
-      </SMobileButton>
-      <SMobileButton id="#works" href="#works">
-        Work
-      </SMobileButton>
+      <SMobileButton href="#home">Home</SMobileButton>
+      <SMobileButton href="#works">Work</SMobileButton>
     </SMobileSections>
   </SMobileTopBar>
 )

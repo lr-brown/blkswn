@@ -49,7 +49,7 @@ export const HighLightedWork = ({
           transition={{ type: "tween", ease: "easeInOut", duration: 0.5 }}
         >
           {content.cover.map((src) => (
-            <img index={index} src={src} alt={content.title + " cover"} />
+            <img index={index} src={src} alt={content.alt} />
           ))}
         </SImage>
         <SInfo
@@ -83,6 +83,7 @@ export const HighLightedWork = ({
             />
             {content.github && (
               <SIconLink
+                aria-label={content.title + "Github"}
                 href={content.github}
                 target="_blank"
                 whileHover={{ scale: 1.1 }}
@@ -92,6 +93,7 @@ export const HighLightedWork = ({
             )}
             {content.external && (
               <SIconLink
+                aria-label={content.title + "Link"}
                 href={content.external}
                 target="_blank"
                 whileHover={{ scale: 1.1 }}

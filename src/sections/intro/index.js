@@ -68,12 +68,17 @@ const IntroView = () => {
             both a programming course and an introductory physics class. After
             completing these courses I realized how much I hated physics, but
             loved programming. Soon, my aspirations quickly shifted and my
-            passion evolved into wanting to become a Software Engineer.
+            passion evolved into wanting to become a Software Engineer. Everyday
+            I learn more about developing, coding and collaboration and fall
+            more in love with all of it!
           </SText>
           <SText>
-            Everyday I learn more about developing and fall more in love with
-            it. I look helping others enact their passions through code and I
-            look forward to working with you!
+            As I continue to improve I hope that I can use my skills to help
+            others express themselves and their products. I look forward to
+            working with you{" "}
+            <span role="img" aria-label="smile emoji">
+              🙂
+            </span>
           </SText>
           <SOther>
             <SMuscicSection>
@@ -85,6 +90,7 @@ const IntroView = () => {
                     href={Assets.albums[index].link}
                     key={Assets["albums"][index].cover}
                     target="_blank"
+                    aria-label={"Spotify Link"}
                     cover={Assets["albums"][index].cover}
                     whileHover={{ scale: 1.1, borderRadius: "8px" }}
                     animate={{ x: 0, opacity: 1 }}
@@ -98,6 +104,7 @@ const IntroView = () => {
                     onClick={() => {
                       setIndex(index > 0 ? index - 1 : Assets.albums.length - 1)
                     }}
+                    aria-label="Previous"
                   >
                     <Icons.Previous size={"32px"} />
                   </motion.button>
@@ -107,6 +114,7 @@ const IntroView = () => {
                     onClick={() => {
                       setIndex((index + 1) % Assets.albums.length)
                     }}
+                    aria-label="Next"
                   >
                     <Icons.Next size={"32px"} />
                   </motion.button>
@@ -127,6 +135,7 @@ const IntroView = () => {
                 whileHover={{ scale: 1.05 }}
                 href={"recs.pdf"}
                 target="_blank"
+                aria-label="Recommendation Pdf"
               >
                 <Icons.MegaPhone size="52px" />
               </SPraise>

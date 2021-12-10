@@ -7,7 +7,11 @@ import { SButtonRow, SCard, SHeader, SLogos } from "./style"
 const WorksCard = ({ content, onClick, layoutId, openSlide }) => {
   return (
     <SCard layoutId={layoutId.body}>
-      <motion.img src={content.logo} layoutId={layoutId.pic} />
+      <motion.img
+        src={content.logo}
+        alt={content.title + " Icon"}
+        layoutId={layoutId.pic}
+      />
       <SHeader layoutId={layoutId.title}>{content.title}</SHeader>
       <SButtonRow>
         {window.matchMedia("(min-width: 1024px)").matches && (

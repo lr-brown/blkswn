@@ -34,12 +34,20 @@ const ReflectionModal = ({ layout, exit, content, iconLayout }) => {
       <SCard layoutId={layout.body} layout>
         <STop>
           {iconLayout ? (
-            <SIcon src={content.logo} layoutId={layout.pic} />
+            <SIcon
+              src={content.logo}
+              alt={content.title + "Logo"}
+              layoutId={layout.pic}
+            />
           ) : (
-            <SIcon src={content.logo} />
+            <SIcon src={content.logo} alt={content.title + "Logo"} />
           )}
           <SHeader layoutId={layout.title}>{content.title}</SHeader>
-          <SCancel whileHover={{ scale: 1.2 }} onClick={exit}>
+          <SCancel
+            whileHover={{ scale: 1.2 }}
+            onClick={exit}
+            aria-label="Cancle"
+          >
             <Icons.Cross size="36px" />
           </SCancel>
         </STop>

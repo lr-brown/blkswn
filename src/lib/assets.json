@@ -2,23 +2,28 @@
   "albums": [
     {
       "cover": "https://upload.wikimedia.org/wikipedia/en/0/0c/Ari_SBB.jpg",
-      "link": "https://open.spotify.com/embed/album/3hejjJbFsinMBc1KBqF71w?utm_source=generator"
+      "link": "https://open.spotify.com/embed/album/3hejjJbFsinMBc1KBqF71w?utm_source=generator",
+      "alt": "Album Cover of Shea Butter Baby By Ari Lennox"
     },
     {
       "cover": "https://upload.wikimedia.org/wikipedia/en/6/61/Blkswn.JPG",
-      "link": "https://open.spotify.com/embed/album/3bTjPEgPzm1XwXsNlMVHhs?utm_source=generator"
+      "link": "https://open.spotify.com/embed/album/3bTjPEgPzm1XwXsNlMVHhs?utm_source=generator",
+      "alt": "Album Cover of Black Swan By Smino"
     },
     {
       "cover": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Chilombo_Deluxe_-_Jhen%C3%A9_Aiko.jpg/220px-Chilombo_Deluxe_-_Jhen%C3%A9_Aiko.jpg",
-      "link": "https://open.spotify.com/embed/album/5jlE1zlhT3mEWw0mRpN920?utm_source=generator"
+      "link": "https://open.spotify.com/embed/album/5jlE1zlhT3mEWw0mRpN920?utm_source=generator",
+      "alt": "Album Cover of Chilombo By Jhene Aiko"
     },
     {
       "cover": "https://upload.wikimedia.org/wikipedia/en/5/55/LaurynHillTheMiseducationofLaurynHillalbumcover.jpg",
-      "link": "https://open.spotify.com/embed/album/1BZoqf8Zje5nGdwZhOjAtD?utm_source=generator"
+      "link": "https://open.spotify.com/embed/album/1BZoqf8Zje5nGdwZhOjAtD?utm_source=generator",
+      "alt": "Album Cover of The Miseducation of Lauryn Hill By Lauryn Hill"
     },
     {
       "cover": "https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",
-      "link": "https://open.spotify.com/embed/album/7ycBtnsMtyVbbwTfJwRjSP?utm_source=generator"
+      "link": "https://open.spotify.com/embed/album/7ycBtnsMtyVbbwTfJwRjSP?utm_source=generator",
+      "alt": "Album Cover of To Pimp a Butterfly By Kendrick Lamar"
     }
   ],
   "highlights": {
@@ -35,6 +40,7 @@
         "https://i.ibb.co/h22snp1/Ourcampus-5.png",
         "https://i.ibb.co/gZt4VfD/Ourcampus-6.png"
       ],
+      "alt": "Screenshot of mobile project called OurCampus",
       "icons": ["react", "flutter", "figma", "css"],
       "description": {
         "What?": "I am a Lead Developer for OurCampus which is a student run mobile app that acts as Wesleyan's 'Social Media' platform. We currently have professor ratings, dining menus and events on the app and are looking to expand. We have had approximately ⅓ of Wesleyan's campus engage with the app so it is very highly used among students.",
@@ -55,6 +61,7 @@
         "https://i.ibb.co/526ckbj/Privacy-Pioneer-4.png",
         "https://i.ibb.co/jbQ5sZr/Privacy-Pioneer-5.png"
       ],
+      "alt": "Screenshot of Web app project called Privacy Pioneer",
       "icons": ["react", "figma", "css"],
       "description": {
         "What?": "I helped build a Firefox browser extension called Privacy Pioneer. The extension reports to the user privacy information that has been sent to companies through their web request. I primarily worked in the frontend of this project so a large point of focus for me was the usability and accessibility of the data the backend team collected.",
@@ -71,10 +78,10 @@
       "cover": ["https://i.ibb.co/R6rwWNm/skp1.png"],
       "screenshots": [],
       "icons": ["figma", "react", "css"],
+      "alt": "Screenshot of Web app project called Skphotography",
       "description": {
         "What?": "   I designed and created a website portfolio for my mother’s photography business called SKPhotography. I began with creating wireframes which are mockups of the website before starting to code it.  What I ended up creating and continue to develop is a responsive React Single Page Web App.",
         "When, Where, Who?": "   Currently, this is a website that I develop on my own with constant feedback from my mom. I began working on this project during the summer before my junior year and continue to develop and improve it now. My mother’s photography business is based in Philly but I do work on the website both at school and at home",
-
         "Why?": "    I noticed that my mother's original website that she designed using VistaPrint had many usability issues and didn’t get the point of the website across quickly enough. The issues ranged from awkward layouts to inappropriate font sizes mostly due to the limited capabilities of the software she used. After taking note of these issues I offered my novice services in Web Design. Not only did this present me with the opportunity to practice my coding skills but I also was able to explore the world of design and usability through a straightforward implementation case. While the website is not complete I look forward to hearing feedback from my mom and her clients in the future.",
         "How?": "    I first used a program called Figma to create wireframes. Figma allowed me to visualize CSS (Cascading Style Sheets ) and HTML (HyperText Markup Language) concepts through interactive models. For example, I wanted to use flexbox layouts (one way of arranging and sizing items on a page) and Figma allows you to implement them using frames and a tool called “auto layout”. After seeing it used and applied to my Figma designs I can more easily implement it in my code by converting all the details and parameters into CSS and HTML.\n    While the mockups are not perfect models of the end product  I was able to use them to gauge my mother’s reactions to concepts and ideas before implementing them through code. This allowed for a very rapid design process with ample feedback from the customer (my mom).\n    I then implemented the website using a javascript library called React. I have found that using React makes the readability of my code significantly better with the use of components and states."
       },
@@ -95,6 +102,7 @@
         "https://i.ibb.co/fXDtz7c/333-6.png",
         "https://i.ibb.co/S6z7pcr/333-7.png"
       ],
+      "alt": "Screenshot of one of the projects for Software Engineering course",
       "icons": ["react", "figma", "django", "css", "html"],
       "description": {
         "What?": "   I was assigned a series of projects for my Software Engineering class. While they are far from perfect (or even usable) it was one of the first times I began to put learned  computer science concepts into a software engineering context. I was introduced to project management through git and Github;  basic backend concepts through Django, PHP and SQL; and  frontend development through React and React Native.",
@@ -110,6 +118,7 @@
       "logo": "https://i.ibb.co/7phBFrW/blkswn.png",
       "screenshots": [],
       "icons": ["react", "figma", "css"],
+      "alt": "Screenshot of web app project called Black Swan",
       "description": {
         "What?": "   'Blkswn' is my personal portfolio website I made from scratch. The name came from one of my favorite albums by Smino. I thought that it would be fun to name my (untrademarked) projects after albums I really enjoy. The website stores and displays  all of my relevant work and projects. The website serves as a small representation of how I approach expression, conveying important content, and most importantly, accessibility.",
         "When, Where, Who?": "   I decided to make my own website portfolio during my sophomore spring semester. I started working on the website while completing classes but did most of the work on the website over the summer before my junior year. I continue to work on it myself and ask my peers and colleagues for help on how I can improve it and better portray me.",
@@ -122,6 +131,7 @@
     "Enigma": {
       "title": "Enigma",
       "logo": "https://i.ibb.co/KXrq0rk/Enigma.png",
+      "alt": "Screenshot of video game project called Enigma",
       "screenshots": [
         "https://i.ibb.co/TRZXbWj/Enigma-1.png",
         "https://i.ibb.co/Pr1jg6X/Enigma-2.png",
