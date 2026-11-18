@@ -1,0 +1,43 @@
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 65%;
+  justify-content: center;
+}
+
+.main-image {
+  border-radius: 12px;
+  aspect-ratio: 16/10;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-image-layer {
+  position: absolute;
+  inset: 0;
+  animation: gallery-fade-in 0.5s ease-in-out both;
+}
+
+@keyframes gallery-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+div.other-images-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  overflow: scroll;
+  gap: 16px;
+  height: 65%;
+  div.child {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 16/10;
+    &.portrait {
+      aspect-ratio: 9/16;
+    } 
+  }
+}
