@@ -1,0 +1,60 @@
+:root {
+  --backgroundColor: #121915;
+  --accentColor: #65856e;
+  --secondaryAccentColor: #c3d8a0;
+  --white: #ffffff;
+  --offWhite: #c9d8d1;
+  --tertiaryTextColor: var(--offWhite);
+  --icons: #ffffff;
+  --accentColorTint: #1a231e75;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur: 300ms;
+  --dur-slow: 500ms;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  background-color: var(--backgroundColor);
+}
+
+body {
+  max-width: 1200px;
+  color: var(--white);
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  section {
+    scroll-margin-top: 60px;
+    height: calc(100dvh - 57px);
+  }
+  img {
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  button {
+    background: none;
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+  }
+}
+
+/* Visually hidden until focused via keyboard */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -100px;
+  z-index: 1000;
+  padding: 8px 12px;
+  background: #000;
+  color: #fff;
+}
+.skip-link:focus {
+  top: 8px;
+}
