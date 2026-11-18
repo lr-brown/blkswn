@@ -1,7 +1,4 @@
-import styled from "styled-components"
-import { motion } from "framer-motion"
-
-export const SCard = styled(motion.div)`
+.reflection-card {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -20,17 +17,16 @@ export const SCard = styled(motion.div)`
   );
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   align-items: center;
-  @media only screen and (max-width: 1023px) {
+}
+@media only screen and (max-width: 1023px) {
+  .reflection-card {
     width: 75vw;
     max-height: 90vh;
     align-items: center;
   }
-`
-export const SContent = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-`
-export const STop = styled(motion.div)`
+}
+
+.reflection-top {
   flex-direction: row;
   align-items: center;
   width: 100%;
@@ -38,77 +34,95 @@ export const STop = styled(motion.div)`
   align-self: flex-start;
   display: flex;
   height: 10vh;
-`
-export const SQuestionRow = styled.div`
+}
+
+.reflection-question-row {
   display: flex;
   flex-direction: row;
-`
-export const SQuestionButton = styled(motion.button)`
+}
+
+.reflection-question-button {
   padding: 8px;
   font-size: var(--body);
   color: white;
   margin: 8px;
   height: 100%;
-`
+}
 
-export const SBody = styled(motion.div)`
+.reflection-body {
   flex-direction: row;
   display: flex;
   width: 100%;
   height: 90%;
   justify-content: space-evenly;
   overflow-y: auto;
-`
+}
 
-export const SIcon = styled(motion.img)`
+.reflection-icon {
   margin: 12px 12px;
   display: flex;
   height: 100%;
   object-fit: contain;
-  @media only screen and (max-width: 1023px) {
+}
+@media only screen and (max-width: 1023px) {
+  .reflection-icon {
     height: 10vw;
   }
-`
+}
 
-export const SButton = styled(motion.div)`
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  button {
-    height: fit-content;
-  }
-`
-
-export const SHeader = styled(motion.div)`
+.reflection-header {
   font-size: var(--title1);
   display: flex;
   font-weight: bolder;
-  @media only screen and (max-width: 1023px) {
+}
+@media only screen and (max-width: 1023px) {
+  .reflection-header {
     font-size: 5vw;
   }
-`
-export const SDescription = styled(motion.div)`
+}
+
+.reflection-description {
   width: 100%;
   display: flex;
-  p {
-    font-size: var(--body);
-    line-height: normal;
-    white-space: pre-wrap;
-  }
   flex-direction: column;
   overflow-y: auto;
-`
+}
+.reflection-description p {
+  font-size: var(--body);
+  line-height: normal;
+  white-space: pre-wrap;
+}
 
-export const SOverlay = styled(motion.div)`
+.reflection-overlay {
   position: fixed;
   left: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-`
+}
 
-export const SCancel = styled.button`
+.reflection-cancel {
   margin: 8px;
-`
+}
+
+/* Enter / exit */
+.reflection-overlay {
+  animation: fade-in var(--dur-fast) var(--ease) both;
+}
+.reflection-card {
+  animation: pop-in var(--dur) var(--ease) both;
+}
+.reflection-overlay.closing,
+.reflection-card.closing {
+  animation-direction: reverse;
+  animation-duration: 200ms;
+}
+
+.reflection-question-button.selected {
+  background-color: var(--secondaryColor);
+}
+.reflection-question-button:not(.selected):hover {
+  transform: scale(1.1);
+  background-color: var(--secondaryColorTint);
+}
