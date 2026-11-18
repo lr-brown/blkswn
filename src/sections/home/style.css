@@ -1,0 +1,81 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  height: 100vh;
+}
+
+.home-text {
+  flex: 1;
+  color: var(--tertiaryTextColor);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.home-headline {
+  margin-top: 16px;
+  margin-bottom: 0px;
+  line-height: 4rem;
+  font-size: 4.3rem;
+}
+
+.home-chip {
+  background-color: var(--accentColor);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  fill: white;
+  width: fit-content;
+  gap: 8px;
+  border-radius: 24px;
+  font-size: .8rem;
+  font-weight: 800;
+  user-select: none;
+}
+
+.home-chips-row-header,
+.home-chips-row-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.home-chips-row-header {
+  gap: 12px;
+}
+.home-chips-row-footer {
+  gap: 8px;
+}
+
+.icon-button {
+  fill: white;
+}
+
+.home-picture {
+  width: 100%;
+  flex: 1;
+  padding: 20px;
+  aspect-ratio: 1/1;
+  border-bottom-right-radius: 30%;
+  border-bottom-left-radius: 30%;
+  filter:
+    /* inner ring: 4px off-white */
+    drop-shadow(4px 0 0 var(--offWhite))
+    drop-shadow(-4px 0 0 var(--offWhite))
+    drop-shadow(0 4px 0 var(--offWhite))
+    drop-shadow(0 -4px 0 var(--offWhite))
+    drop-shadow(3px 3px 0 var(--offWhite))
+    drop-shadow(-3px -3px 0 var(--offWhite))
+    drop-shadow(3px -3px 0 var(--offWhite))
+    drop-shadow(-3px 3px 0 var(--offWhite))
+
+    /* outer ring: 5px accent */
+    drop-shadow(5px 0 0 var(--accentColor))
+    drop-shadow(-5px 0 0 var(--accentColor))
+    drop-shadow(0 5px 0 var(--accentColor))
+    drop-shadow(0 -5px 0 var(--accentColor))
+    drop-shadow(4px 4px 0 var(--accentColor))
+    drop-shadow(-4px -4px 0 var(--accentColor))
+    drop-shadow(4px -4px 0 var(--accentColor))
+    drop-shadow(-4px 4px 0 var(--accentColor));
+}
