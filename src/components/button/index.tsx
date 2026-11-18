@@ -11,6 +11,7 @@ type ButtonProps = {
 const Button = ({ color, handleClick, text, margin }: ButtonProps) => {
   return (
     <button
+      type="button"
       className="button"
       style={
         {

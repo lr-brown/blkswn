@@ -3,7 +3,8 @@ import "./style.css";
 
 const AboutView = () => {
   return (
-    <section id="about">
+    <section id="about" aria-labelledby="about-heading">
+      <h2 className="sr-only" id="about-heading">About me</h2>
       <p className="intro-text">
         Hi! My name is Logan and I am a Software Engineer based in the DMV area.
         I have professional experience in Frontend Product Engineering but skill

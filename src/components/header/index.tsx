@@ -11,8 +11,7 @@ const CollapsibleWord = ({ word }: { word: string }) => (
   </span>
 )
 
-// `id` is the section element's id. "About Me" maps to the home section,
-// since no element with id="about" is rendered.
+// `id` is the id of the section element each link scrolls to.
 const NAV_ITEMS = [
   { id: "about", label: "About Me" },
   { id: "works", label: "My Work" },
@@ -57,16 +56,17 @@ const Header = () => {
     <>
       <div ref={sentinel} className="header-sentinel" aria-hidden="true" />
       <header className={scrolled ? "scrolled" : ""}>
-      <a href="#home" className="header-title-link">
-        <h1 className="header-title" aria-label="Logan Brown">
-          <span aria-hidden="true">
-            {"<"}
-            <CollapsibleWord word="Logan" />{ scrolled ? "" : " "}<CollapsibleWord word="Brown" />
-            {">"}
-          </span>
+        <h1 className="header-title">
+          <a href="#home" className="header-title-link">
+            <span className="sr-only">Logan Brown</span>
+            <span aria-hidden="true">
+              {"<"}
+              <CollapsibleWord word="Logan" />{ scrolled ? "" : " "}<CollapsibleWord word="Brown" />
+              {">"}
+            </span>
+          </a>
         </h1>
-        </a>
-        <nav className="nav-items">
+        <nav className="nav-items" aria-label="Primary">
           {NAV_ITEMS.map(({ id, label }) => (
             <a
               key={id}

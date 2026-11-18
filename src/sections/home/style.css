@@ -7,16 +7,29 @@
 }
 
 .home-text {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
   color: var(--tertiaryTextColor);
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.2rem;
 }
 .home-headline {
+  font-family: 'Space Grotesk';
   margin-top: 16px;
   margin-bottom: 0px;
   line-height: 4rem;
   font-size: 4.3rem;
+  text-wrap: balance;
+}
+
+.home-chips-row-header,
+.home-chips-row-footer {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon {
+  display: flex;
 }
 
 .home-chip {
@@ -30,7 +43,7 @@
   gap: 8px;
   border-radius: 24px;
   font-size: .8rem;
-  font-weight: 800;
+  font-weight: 700;
   user-select: none;
 }
 
@@ -52,30 +65,25 @@
 }
 
 .home-picture {
-  width: 100%;
-  flex: 1;
+  box-sizing: border-box;
+  /* min-width/min-height: 0 stops the image's intrinsic size from setting
+     the flex minimum, which Chrome and Firefox resolve differently. */
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   padding: 20px;
   aspect-ratio: 1/1;
   border-bottom-right-radius: 30%;
   border-bottom-left-radius: 30%;
-  filter:
-    /* inner ring: 4px off-white */
-    drop-shadow(4px 0 0 var(--offWhite))
-    drop-shadow(-4px 0 0 var(--offWhite))
-    drop-shadow(0 4px 0 var(--offWhite))
-    drop-shadow(0 -4px 0 var(--offWhite))
-    drop-shadow(3px 3px 0 var(--offWhite))
-    drop-shadow(-3px -3px 0 var(--offWhite))
-    drop-shadow(3px -3px 0 var(--offWhite))
-    drop-shadow(-3px 3px 0 var(--offWhite))
+  /* defined inline in home/index.tsx (feMorphology dilate, two rings) */
+  filter: url(#portrait-outline);
+}
 
-    /* outer ring: 5px accent */
-    drop-shadow(5px 0 0 var(--accentColor))
-    drop-shadow(-5px 0 0 var(--accentColor))
-    drop-shadow(0 5px 0 var(--accentColor))
-    drop-shadow(0 -5px 0 var(--accentColor))
-    drop-shadow(4px 4px 0 var(--accentColor))
-    drop-shadow(-4px -4px 0 var(--accentColor))
-    drop-shadow(4px -4px 0 var(--accentColor))
-    drop-shadow(-4px 4px 0 var(--accentColor));
+.svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
 }
