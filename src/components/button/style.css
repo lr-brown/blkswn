@@ -1,0 +1,9 @@
+.button {
+  border: solid 4px;
+  padding: 8px;
+  font-size: var(--secondaryBody);
+  color: white;
+}
+.button:hover {
+  background-color: var(--button-color);
+}

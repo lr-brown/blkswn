@@ -1,0 +1,84 @@
+header {
+  display: flex;
+  top: 12px;
+  position: sticky;
+  padding: 0px 12px;
+  align-items: center;
+  height: 45px;
+  z-index: 1;
+  justify-content: space-between;
+  transition: margin var(--dur) var(--ease),
+    background-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-radius var(--dur) var(--ease),
+    padding var(--dur) var(--ease);
+}
+
+.header-title-link {
+  text-decoration: none;
+}
+
+.header-title {
+  font-family: "Silkscreen", sans-serif;
+  margin: 0;
+  line-height: 1;
+  /* Silkscreen has extra ascent above its caps; nudge up as a fallback. */
+  transform: translateY(-0.06em);
+  user-select: none;
+  color: white;
+}
+
+.scrolled {
+  margin: 0px 20%;
+  background-color: var(--accentColorTint);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 17px;
+  padding: 4px 16px;
+  backdrop-filter: blur(20px) saturate(160%);
+  border: rgba(255, 255, 255, 0.11) 1px solid;
+}
+
+.header-sentinel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 0px;
+  pointer-events: none;
+}
+
+/* Collapses to the first letter. The 1fr -> 0fr grid trick animates to the
+   text's real width, so no hard-coded sizes are needed. */
+.name-rest {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  vertical-align: bottom;
+  transition: grid-template-columns var(--dur-slow) var(--ease),
+    opacity var(--dur-slow) var(--ease);
+}
+.name-rest > span {
+  min-width: 0;
+  overflow: hidden;
+}
+.scrolled .name-rest {
+  grid-template-columns: 0fr;
+  opacity: 0;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+  a {
+    text-decoration: none;
+    color: white;
+    transition: transform 200ms var(--ease), color 200ms var(--ease);
+    &.active {
+      color: var(--accentColor);
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
